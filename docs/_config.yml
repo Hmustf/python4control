@@ -1,7 +1,23 @@
-theme: jekyll-theme-cayman
 title: Python for Control Systems
 description: A comprehensive collection of tutorials for control system analysis and design using Python
 baseurl: "/python4control"
 url: "https://hmustf.github.io"
+
+# Theme settings
+theme: jekyll-theme-cayman
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Navigation
+nav_links:
+  - title: Home
+    url: /
+  - title: Tutorial 0
+    url: /tutorials/tutorial-0/
+
+# Repository
 github:
-  repository_url: https://github.com/Hmustf/python4control 
+  repository_url: https://github.com/Hmustf/python4control
+  is_project_page: true 
