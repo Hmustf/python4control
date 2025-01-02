@@ -1,0 +1,12 @@
+Running control system examples...
+Transfer function G(s):
+<TransferFunction>: sys[0]
+Inputs (1): ['u[0]']
+Outputs (1): ['y[0]']
+
+
+      1
+-------------
+s^2 + 2 s + 1
+
+Examples completed. Check the 'plots' directory for results.
