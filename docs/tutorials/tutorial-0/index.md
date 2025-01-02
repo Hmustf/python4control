@@ -1,7 +1,5 @@
 ---
 layout: default
-title: Tutorial 0 - Python Basics for Control
-description: Learn the fundamentals of using Python for control system analysis and design
 ---
 
 # 🐍 Control System Design with Python
