@@ -1,0 +1,72 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+}
+
+.feature-list li {
+    margin-bottom: 0.5rem;
+}
+
+.code-block {
+    background: #f8f9fa;
+    border-radius: 6px;
+    padding: 1rem;
+}
+
+pre {
+    margin-bottom: 0;
+}
+
+code {
+    color: #d63384;
+}
+
+.tutorial-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.nav-button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #0d6efd;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #0d6efd;
+    transition: all 0.2s;
+}
+
+.nav-button:hover {
+    background: #0d6efd;
+    color: white;
+}
+
+.nav-button.disabled {
+    border-color: #6c757d;
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+.nav-button.disabled:hover {
+    background: none;
+    color: #6c757d;
+}
+
+.math {
+    overflow-x: auto;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+    margin: 1rem 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+} 

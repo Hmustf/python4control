@@ -1,0 +1,7 @@
+theme: jekyll-theme-cayman
+title: Python for Control Systems
+description: A comprehensive collection of tutorials for control system analysis and design using Python
+baseurl: "/python4control"
+url: "https://hmustf.github.io"
+github:
+  repository_url: https://github.com/Hmustf/python4control 
