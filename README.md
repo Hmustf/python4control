@@ -2,6 +2,10 @@
 
 A comprehensive collection of tutorials and examples demonstrating control system analysis and design using Python. Perfect for students, engineers, and hobbyists interested in control systems.
 
+## 🎯 Documentation
+
+Visit our [documentation site](https://hmustf.github.io/python4control/) for interactive tutorials and examples.
+
 ## 🎯 What You'll Learn
 
 - Control system analysis using Python
@@ -10,7 +14,16 @@ A comprehensive collection of tutorials and examples demonstrating control syste
 - Controller design and tuning
 - Real-world control applications
 
-## 🔧 Prerequisites
+## 📚 Available Tutorials
+
+### [Tutorial 0: Python Basics for Control](tutorials/tutorial-0/)
+- Basic Python concepts for control systems
+- Symbolic mathematics with SymPy
+- Transfer function analysis
+- System response visualization
+- Step response plotting
+
+## 📁 Prerequisites
 
 - Python 3.8+
 - Basic understanding of control systems theory
@@ -34,15 +47,6 @@ source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
 ```bash
 pip install -r requirements.txt
 ```
-
-## 📚 Tutorials
-
-### [Tutorial 0: Python Basics for Control](tutorials/tutorial-0/)
-- Basic Python concepts for control systems
-- Symbolic mathematics with SymPy
-- Transfer function analysis
-- System response visualization
-- Step response plotting
 
 ## 📁 Project Structure
 
