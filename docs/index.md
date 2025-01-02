@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Python for Control Systems
 description: A comprehensive collection of tutorials for control system analysis and design using Python
 ---
