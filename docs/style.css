@@ -32,16 +32,17 @@ code {
 
 .nav-button {
     padding: 0.5rem 1rem;
-    border: 1px solid #0d6efd;
+    border: 1px solid #159957;
     border-radius: 4px;
     text-decoration: none;
-    color: #0d6efd;
+    color: #159957;
     transition: all 0.2s;
 }
 
 .nav-button:hover {
-    background: #0d6efd;
+    background: #159957;
     color: white;
+    text-decoration: none;
 }
 
 .nav-button.disabled {
@@ -53,6 +54,7 @@ code {
 .nav-button.disabled:hover {
     background: none;
     color: #6c757d;
+    text-decoration: none;
 }
 
 .math {
@@ -61,6 +63,7 @@ code {
     background: #f8f9fa;
     border-radius: 6px;
     margin: 1rem 0;
+    text-align: center;
 }
 
 img {
@@ -137,4 +140,60 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+.output {
+    background-color: #f8f8f8;
+    border-left: 4px solid #159957;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.output pre {
+    margin: 0;
+    padding: 0;
+}
+
+.info-box {
+    background-color: #f1f8ff;
+    border-left: 4px solid #0366d6;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+pre[class*="language-"] {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.site-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: solid 1px #eff0f1;
+    text-align: center;
+}
+
+@media screen and (max-width: 42em) {
+    .page-header {
+        padding: 2rem 1rem;
+    }
+    
+    .main-content {
+        padding: 2rem 1rem;
+    }
+    
+    .tutorial-navigation {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
 } 
