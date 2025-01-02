@@ -44,6 +44,63 @@
 x = "Some text"  # string
 x = True         # boolean</code></pre>
                 </div>
+                <div class="code-block">
+                    <pre><code># Output:
+Float: 123.3
+String: Some text
+Boolean: True</code></pre>
+                </div>
+
+                <p>Engineers often work with signals (arrays), which are handled efficiently using NumPy:</p>
+                <div class="code-block">
+                    <pre><code>import numpy as np
+
+x = np.array([1, 2, 3, 4])  # Create a numpy array</code></pre>
+                </div>
+                <div class="code-block">
+                    <pre><code># Output:
+Basic array: [1 2 3 4]</code></pre>
+                </div>
+
+                <p>Arrays can be created from individual variables:</p>
+                <div class="code-block">
+                    <pre><code>x1, x2, x3, x4 = 1, 2, 3, 4
+x = np.array([x1, x2, x3, x4])</code></pre>
+                </div>
+                <div class="code-block">
+                    <pre><code># Output:
+Array from variables: [1 2 3 4]</code></pre>
+                </div>
+
+                <p>NumPy provides convenient functions for creating arrays:</p>
+                <div class="code-block">
+                    <pre><code>x = np.zeros(4)          # Array of zeros
+y = np.ones((2, 2))      # 2x2 matrix of ones
+z = np.linspace(0, 1, 5) # 5 evenly spaced points from 0 to 1</code></pre>
+                </div>
+                <div class="code-block">
+                    <pre><code># Output:
+Zeros array: [0. 0. 0. 0.]
+Ones matrix:
+[[1. 1.]
+ [1. 1.]]
+Linspace array: [0.   0.25 0.5  0.75 1.  ]</code></pre>
+                </div>
+
+                <h2 class="mt-5">🔄 Control Flow and Functions</h2>
+                <p>Python's clean syntax makes control flow and functions intuitive:</p>
+                <div class="code-block">
+                    <pre><code>def square(x):
+    """Square a number."""
+    return x * x
+
+x = 2
+y = square(x)  # y = 4</code></pre>
+                </div>
+                <div class="code-block">
+                    <pre><code># Output:
+Square of 2 is 4</code></pre>
+                </div>
 
                 <h2 class="mt-5">➗ Symbolic Mathematics with SymPy</h2>
                 <p>SymPy enables symbolic mathematics, which is crucial for control system analysis. For example, we can solve the quadratic equation:</p>
@@ -53,6 +110,38 @@ x = True         # boolean</code></pre>
                 <p>Or simplify trigonometric identities like:</p>
                 <div class="math">
                     \[\sin^2(x) + \cos^2(x) = 1\]
+                </div>
+
+                <p>Here's how to do it in code:</p>
+                <div class="code-block">
+                    <pre><code>from sympy import symbols, solve, simplify, cos, sin
+
+# Define symbolic variables
+x, y = symbols('x y')
+
+# Work with polynomials
+pol = x**2 + 2*x + 1  # Represents (x + 1)²
+coeffs = pol.as_poly().all_coeffs()
+
+# Solve equations
+solution = solve(pol, x)
+
+# Simplify expressions
+result = simplify(cos(x)**2 + sin(x)**2)</code></pre>
+                </div>
+                <div class="code-block">
+                    <pre><code># Output:
+--- Symbolic Mathematics Examples ---
+Defined symbols: x y
+
+Polynomial: x**2 + 2*x + 1
+Coefficients: [1, 2, 1]
+
+Solutions to x**2 + 2*x + 1 = 0:
+[-1]
+
+Simplifying sin(x)**2 + cos(x)**2
+Result: 1</code></pre>
                 </div>
 
                 <h2 class="mt-5">🎛️ Control Systems with Python Control</h2>
@@ -76,6 +165,9 @@ t = np.linspace(0, 10, 1000)
 t, y = control.step_response(G, t)
 plt.plot(t, y)
 plt.grid(True)
+plt.xlabel('Time [s]')
+plt.ylabel('Amplitude')
+plt.title('Step Response')
 plt.show()</code></pre>
                 </div>
 
@@ -89,6 +181,28 @@ plt.show()</code></pre>
                 </div>
                 <p>where \(a\) is the inverse of the time constant \(\tau = \frac{1}{a}\).</p>
 
+                <div class="code-block">
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from control import TransferFunction, step_response
+
+plt.figure(figsize=(10, 6))
+t = np.linspace(0, 5, 1000)
+
+for a in range(1, 6):
+    G = TransferFunction([a], [1, a])
+    t, y = step_response(G, t)
+    plt.plot(t, y, linewidth=2, label=f'a = {a}')
+
+plt.grid(True)
+plt.xlabel('Time [s]')
+plt.ylabel('Amplitude')
+plt.title('Step Responses of First-Order Systems')
+plt.legend()
+plt.show()</code></pre>
+                </div>
+
+                <p>The resulting comparison plot:</p>
                 <img src="plots/first_order_comparison.png" alt="First Order System Comparison">
 
                 <div class="tutorial-navigation">
