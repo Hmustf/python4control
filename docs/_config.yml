@@ -5,19 +5,6 @@ plugins:
 title: Python for Control Systems
 description: A comprehensive collection of tutorials for control system analysis and design using Python
 
-# Build settings
-markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-
-defaults:
-  -
-    scope:
-      path: "" # an empty string here means all files in the project
-    values:
-      layout: "default"
-
 github:
   is_project_page: true
   repository_url: https://github.com/Hmustf/python4control 

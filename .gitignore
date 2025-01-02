@@ -12,4 +12,5 @@ ENV/
 # Ignore all PNGs except those in plots directories
 *.png
 !plots/*.png
-!tutorials/*/plots/*.png 
+!tutorials/*/plots/*.png
+!docs/tutorials/*/plots/*.png 
