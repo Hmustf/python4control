@@ -4,6 +4,4 @@ description: A comprehensive collection of tutorials for control system analysis
 baseurl: "/python4control"
 url: "https://hmustf.github.io"
 github:
-  repository_url: https://github.com/Hmustf/python4control
-domain: hmustf.github.io
-url: "https://hmustf.github.io" 
+  repository_url: https://github.com/Hmustf/python4control 
