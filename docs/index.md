@@ -33,18 +33,58 @@ A comprehensive collection of tutorials and examples demonstrating control syste
 
 ## 🚀 Getting Started
 
+1. Clone this repository:
 ```bash
-# Clone the repository
 git clone https://github.com/Hmustf/python4control.git
 cd python4control
+```
 
-# Create virtual environment
+2. Create a virtual environment:
+```bash
 python -m venv .venv
 source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
+```
 
-# Install required packages
+3. Install required packages:
+```bash
 pip install -r requirements.txt
 ```
+
+## 📁 Project Structure
+
+```
+.
+├── README.md
+├── requirements.txt
+└── tutorials/
+    └── tutorial-0/
+        ├── README.md
+        ├── basic_examples.py
+        ├── symbolic_example.py
+        ├── control_examples.py
+        └── plots/
+```
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how you can help:
+- Add new tutorials
+- Improve existing examples
+- Fix bugs or typos
+- Enhance documentation
+- Add more real-world examples
+
+## 📖 Documentation
+
+Each tutorial contains:
+- Detailed README with theory explanations
+- Well-commented Python code
+- Example outputs and plots
+- Practice exercises
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🔗 Useful Links
 
