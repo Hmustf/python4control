@@ -3,6 +3,21 @@ title: Python for Control Systems
 description: A comprehensive collection of tutorials for control system analysis and design using Python
 baseurl: /python4control
 url: https://hmustf.github.io
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Plugins
+plugins:
+  - jekyll-relative-links
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-default-layout
+
+# Repository settings
 github:
   is_project_page: true
   repository_url: https://github.com/Hmustf/python4control 
