@@ -20,7 +20,7 @@ A comprehensive collection of tutorials and examples demonstrating control syste
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/python4control.git
+git clone https://github.com/Hmustf/python4control.git
 cd python4control
 ```
 
