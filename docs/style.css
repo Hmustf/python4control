@@ -320,45 +320,69 @@ ul li:before {
 
 /* Code block styling */
 pre[class*="language-"] {
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-    background: #1a1a1a !important;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 1.5rem 0 !important;
+    padding: 1.5rem !important;
+    background: #1e1e1e !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+    background: #1e1e1e !important;
 }
 
 code[class*="language-"] {
-    text-shadow: none;
-    font-family: 'Fira Code', 'JetBrains Mono', Consolas, Monaco, 'Courier New', monospace;
-    font-size: 0.9em;
+    text-shadow: none !important;
+    color: #d4d4d4 !important;
+    font-family: 'Fira Code', 'JetBrains Mono', Consolas, Monaco, 'Courier New', monospace !important;
+    font-size: 0.9em !important;
 }
 
 /* Copy button styling */
+div.code-toolbar {
+    position: relative;
+}
+
 div.code-toolbar > .toolbar {
-    opacity: 1;
+    position: absolute;
     top: 0.5rem;
     right: 0.5rem;
+    opacity: 1 !important;
 }
 
-div.code-toolbar > .toolbar > .toolbar-item > button {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-    color: #fff;
-    font-size: 0.8em;
-    padding: 0.4em 0.8em;
-    transition: all 0.2s ease;
+div.code-toolbar > .toolbar button {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 4px !important;
+    color: #fff !important;
+    font-size: 0.8em !important;
+    padding: 0.4em 0.8em !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
 }
 
-div.code-toolbar > .toolbar > .toolbar-item > button:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.3);
+div.code-toolbar > .toolbar button:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
     transform: translateY(-1px);
 }
+
+/* Token colors */
+.token.comment { color: #6a9955 !important; }
+.token.string { color: #ce9178 !important; }
+.token.number { color: #b5cea8 !important; }
+.token.keyword { color: #569cd6 !important; }
+.token.function { color: #dcdcaa !important; }
+.token.class-name { color: #4ec9b0 !important; }
+.token.operator { color: #d4d4d4 !important; }
 
 /* Output block styling */
 .output pre {
     background: var(--code-bg) !important;
     color: var(--text-color) !important;
     border-left: 4px solid var(--accent-color);
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    border-radius: 8px;
 } 
