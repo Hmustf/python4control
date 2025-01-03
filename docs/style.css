@@ -316,4 +316,49 @@ ul li:before {
     font-weight: bold;
     position: absolute;
     left: 0;
+}
+
+/* Code block styling */
+pre[class*="language-"] {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    background: #1a1a1a !important;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+code[class*="language-"] {
+    text-shadow: none;
+    font-family: 'Fira Code', 'JetBrains Mono', Consolas, Monaco, 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+/* Copy button styling */
+div.code-toolbar > .toolbar {
+    opacity: 1;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item > button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 0.8em;
+    padding: 0.4em 0.8em;
+    transition: all 0.2s ease;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item > button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Output block styling */
+.output pre {
+    background: var(--code-bg) !important;
+    color: var(--text-color) !important;
+    border-left: 4px solid var(--accent-color);
 } 
