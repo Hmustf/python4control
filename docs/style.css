@@ -1,16 +1,18 @@
 :root {
-    --primary-color: #2ecc71;
-    --secondary-color: #3498db;
-    --text-color: #2c3e50;
-    --code-bg: #f8f9fa;
-    --border-color: #e9ecef;
-    --header-gradient: linear-gradient(120deg, #2ecc71, #3498db);
+    --primary-color: #1a365d;
+    --secondary-color: #2b6cb0;
+    --accent-color: #4299e1;
+    --text-color: #2d3748;
+    --code-bg: #f7fafc;
+    --border-color: #e2e8f0;
+    --header-gradient: linear-gradient(135deg, #2b6cb0 0%, #1a365d 100%);
 }
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 1.7;
     color: var(--text-color);
+    background-color: #ffffff;
 }
 
 .page-header {
@@ -24,6 +26,7 @@ body {
     font-size: 3rem;
     margin: 0.67em 0;
     font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 .project-tagline {
@@ -69,7 +72,7 @@ a {
 }
 
 a:hover {
-    color: var(--primary-color);
+    color: var(--accent-color);
     text-decoration: none;
 }
 
@@ -83,6 +86,7 @@ a:hover {
     color: white;
     font-weight: 500;
     transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
 }
 
 .btn:hover {
@@ -101,7 +105,7 @@ pre, code {
 pre {
     padding: 1.5rem;
     background: var(--code-bg);
-    box-shadow: inset 0 0 0 1px var(--border-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     overflow-x: auto;
 }
 
@@ -109,11 +113,12 @@ code {
     padding: 0.2em 0.4em;
     background: var(--code-bg);
     border-radius: 4px;
+    color: var(--primary-color);
 }
 
 .output {
-    background-color: #f8f9fa;
-    border-left: 4px solid var(--primary-color);
+    background-color: var(--code-bg);
+    border-left: 4px solid var(--accent-color);
     padding: 1.5rem;
     margin: 1.5rem 0;
     border-radius: 8px;
@@ -121,7 +126,7 @@ code {
 }
 
 .info-box {
-    background-color: #e8f4fd;
+    background-color: #ebf8ff;
     border-left: 4px solid var(--secondary-color);
     padding: 1.5rem;
     margin: 1.5rem 0;
@@ -140,23 +145,23 @@ code {
 
 .nav-button {
     padding: 0.75rem 1.5rem;
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--secondary-color);
     border-radius: 2rem;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     font-weight: 500;
     transition: all 0.3s ease;
 }
 
 .nav-button:hover {
-    background: var(--primary-color);
+    background: var(--secondary-color);
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(46, 204, 113, 0.2);
+    box-shadow: 0 4px 12px rgba(43, 108, 176, 0.2);
 }
 
 .nav-button.disabled {
     border-color: var(--border-color);
-    color: #6c757d;
+    color: #718096;
     cursor: not-allowed;
     pointer-events: none;
 }
@@ -189,7 +194,7 @@ img:hover {
     padding-top: 2rem;
     border-top: 1px solid var(--border-color);
     text-align: center;
-    color: #6c757d;
+    color: #718096;
 }
 
 ul, ol {
@@ -203,7 +208,7 @@ li {
 blockquote {
     margin: 1.5rem 0;
     padding: 1rem 1.5rem;
-    border-left: 4px solid var(--primary-color);
+    border-left: 4px solid var(--accent-color);
     background: var(--code-bg);
     border-radius: 8px;
 }
