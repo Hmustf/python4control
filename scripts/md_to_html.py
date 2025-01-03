@@ -18,10 +18,12 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     <link rel="stylesheet" href="https://pages-themes.github.io/cayman/assets/css/style.css">
     <link rel="stylesheet" href="{css_path}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -135,21 +137,24 @@ def convert_md_to_html(md_path, tutorial_info, current_id):
         ],
         extension_configs={
             'codehilite': {
-                'css_class': 'language-python',
-                'linenums': True
+                'css_class': 'language-python line-numbers',
+                'linenums': True,
+                'use_pygments': True
             }
         }
     )
     
     # Replace code blocks to work with Prism.js
     html_content = html_content.replace('<div class="codehilite">',
-        '<div class="code-toolbar"><pre class="line-numbers language-python">')
+        '<div class="code-toolbar"><pre class="line-numbers language-python"><code class="language-python">')
     
     # Don't add syntax highlighting to output blocks
     html_content = html_content.replace('</div>\n\n<p>Output:</p>\n<div class="codehilite">',
-        '</pre></div>\n\n<p>Output:</p>\n<div class="output">')
-    html_content = html_content.replace('<pre><span></span><code>Output:',
-        '<pre><code>Output:')
+        '</code></pre></div>\n\n<p>Output:</p>\n<div class="output"><pre><code>')
+    
+    # Fix output blocks
+    html_content = html_content.replace('<pre><span></span><code>',
+        '<pre><code>')
     
     # Close code blocks properly
     html_content = html_content.replace('</code></pre></div>',
