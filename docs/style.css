@@ -325,12 +325,14 @@ pre[class*="language-"] {
     background: #1c1c1c !important;
     border-radius: 8px !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    width: 100% !important;
+    overflow-x: auto !important;
 }
 
 pre[class*="language-"].line-numbers {
-    position: relative;
+    position: relative !important;
     padding-left: 3.8em !important;
-    counter-reset: linenumber;
+    counter-reset: linenumber !important;
 }
 
 :not(pre) > code[class*="language-"],
@@ -345,6 +347,9 @@ code[class*="language-"] {
     font-family: 'Fira Code', 'JetBrains Mono', Consolas, Monaco, 'Courier New', monospace !important;
     font-size: 0.9em !important;
     padding: 0 !important;
+    display: block !important;
+    min-width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 /* Line numbers */
@@ -359,11 +364,16 @@ code[class*="language-"] {
     border-right: 1px solid #404040 !important;
     user-select: none !important;
     padding: 0 !important;
+    height: calc(100% - 3rem) !important;
+    display: flex !important;
+    flex-direction: column !important;
 }
 
 .line-numbers-rows > span {
     display: block !important;
     counter-increment: linenumber !important;
+    height: 1.5em !important;
+    line-height: 1.5em !important;
 }
 
 .line-numbers-rows > span:before {
@@ -372,6 +382,67 @@ code[class*="language-"] {
     display: block !important;
     padding-right: 0.8em !important;
     text-align: right !important;
+}
+
+/* Output block styling */
+.output {
+    background: #2a2a2a !important;
+    border-left: 4px solid var(--accent-color) !important;
+    margin: 1.5rem 0 !important;
+    padding: 1.5rem !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+}
+
+.output pre {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    color: #d4d4d4 !important;
+    box-shadow: none !important;
+    font-family: 'Fira Code', 'JetBrains Mono', Consolas, Monaco, 'Courier New', monospace !important;
+    font-size: 0.9em !important;
+}
+
+.output code {
+    color: #d4d4d4 !important;
+    background: transparent !important;
+    padding: 0 !important;
+    display: block !important;
+    min-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Code toolbar and copy button */
+div.code-toolbar {
+    position: relative !important;
+    width: 100% !important;
+}
+
+div.code-toolbar > .toolbar {
+    position: absolute !important;
+    top: 0.5rem !important;
+    right: 0.5rem !important;
+    opacity: 1 !important;
+}
+
+div.code-toolbar > .toolbar button {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 4px !important;
+    color: #fff !important;
+    font-size: 0.8em !important;
+    padding: 0.4em 0.8em !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+
+div.code-toolbar > .toolbar button:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    transform: translateY(-1px) !important;
 }
 
 /* Token colors - Cursor theme */
