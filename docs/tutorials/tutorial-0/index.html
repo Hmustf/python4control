@@ -1,1 +1,118 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tutorial 0: Python Basics for Control - Python4Control</title>
+    <link rel="stylesheet" href="https://pages-themes.github.io/cayman/assets/css/style.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="page-header">
+        <h1 class="project-name">Tutorial 0: Python Basics for Control</h1>
+        <h2 class="project-tagline">Introduction to Python for Control Systems</h2>
+        <a href="../../" class="btn">← Back to Home</a>
+        <a href="https://github.com/Hmustf/python4control" class="btn">View on GitHub</a>
+    </div>
+
+    <div class="main-content">
+        <div class="tutorial-navigation">
+            <a href="../../" class="nav-button">← Previous</a>
+            <a class="nav-button disabled">Next →</a>
+        </div>
+
+        <h1>🐍 Control System Design with Python</h1>
+
+        <h2>Introduction to Python for Control Systems</h2>
+        <p>Python is a versatile programming language widely used in scientific computing and engineering. With libraries like <a href="https://numpy.org/">NumPy</a>, <a href="https://python-control.org/">Control</a>, and <a href="https://matplotlib.org/">Matplotlib</a>, it provides powerful tools for control system analysis and design.</p>
+
+        <p>This tutorial will guide you through:</p>
+        <ul>
+            <li>Basic Python concepts for control systems</li>
+            <li>Symbolic mathematics with SymPy</li>
+            <li>Transfer function analysis</li>
+            <li>System response visualization</li>
+        </ul>
+
+        <div class="info-box">
+            <p>💡 All code examples can be found in the following files:</p>
+            <ul>
+                <li><a href="https://github.com/Hmustf/python4control/blob/main/tutorials/tutorial-0/basic_examples.py">basic_examples.py</a></li>
+                <li><a href="https://github.com/Hmustf/python4control/blob/main/tutorials/tutorial-0/symbolic_example.py">symbolic_example.py</a></li>
+                <li><a href="https://github.com/Hmustf/python4control/blob/main/tutorials/tutorial-0/control_examples.py">control_examples.py</a></li>
+            </ul>
+        </div>
+
+        <h2>🔧 Basic Python Concepts</h2>
+        <p>Variables in Python are dynamically typed and easy to work with:</p>
+        <pre><code class="language-python">x = 123.3        # float
+x = "Some text"  # string
+x = True         # boolean</code></pre>
+        <div class="output">
+            <p>Output:</p>
+            <pre>Float: 123.3
+String: Some text
+Boolean: True</pre>
+        </div>
+
+        <p>Engineers often work with signals (arrays), which are handled efficiently using NumPy:</p>
+        <pre><code class="language-python">import numpy as np
+
+x = np.array([1, 2, 3, 4])  # Create a numpy array</code></pre>
+        <div class="output">
+            <p>Output:</p>
+            <pre>Basic array: [1 2 3 4]</pre>
+        </div>
+
+        <h2>➗ Symbolic Mathematics with SymPy</h2>
+        <p>SymPy enables symbolic mathematics, which is crucial for control system analysis. For example, we can solve the quadratic equation:</p>
+        <div class="math">\[ax^2 + bx + c = 0\]</div>
+        <p>Or simplify trigonometric identities like:</p>
+        <div class="math">\[\sin^2(x) + \cos^2(x) = 1\]</div>
+
+        <h2>🎛️ Control Systems with Python Control</h2>
+        <p>The <code>control</code> library lets us work with transfer functions and analyze system responses. For example, consider a second-order system:</p>
+        <div class="math">\[G(s) = \frac{1}{s^2 + 2s + 1}\]</div>
+
+        <p>The resulting step response plot:</p>
+        <img src="plots/basic_response.png" alt="Basic Step Response">
+
+        <h2>📊 First-Order System Comparison</h2>
+        <p>Let's compare first-order systems with different time constants. The transfer function form is:</p>
+        <div class="math">\[G(s) = \frac{a}{s + a}\]</div>
+        <p>where \(a\) is the inverse of the time constant \(\tau = \frac{1}{a}\).</p>
+
+        <p>The resulting comparison plot:</p>
+        <img src="plots/first_order_comparison.png" alt="First Order System Comparison">
+
+        <h2>📚 Further Reading</h2>
+        <ul>
+            <li><a href="https://python-control.readthedocs.io/">Python Control Systems Library Documentation</a></li>
+            <li><a href="https://numpy.org/doc/">NumPy Documentation</a></li>
+            <li><a href="https://docs.sympy.org/latest/tutorial/">SymPy Tutorial</a></li>
+        </ul>
+
+        <div class="tutorial-navigation">
+            <a href="../../" class="nav-button">← Previous</a>
+            <a class="nav-button disabled">Next →</a>
+        </div>
+
+        <footer class="site-footer">
+            <span class="site-footer-owner">
+                <a href="https://github.com/Hmustf/python4control">Python4Control</a> is maintained by 
+                <a href="https://github.com/Hmustf">Hmustf</a>.
+            </span>
+        </footer>
+    </div>
+
+    <script>
+        // Highlight code blocks
+        Prism.highlightAll();
+    </script>
+</body>
+</html> 
