@@ -136,16 +136,22 @@ def convert_md_to_html(md_path, tutorial_info, current_id):
         extension_configs={
             'codehilite': {
                 'css_class': 'language-python',
-                'linenums': False
+                'linenums': True
             }
         }
     )
     
     # Replace code blocks to work with Prism.js
     html_content = html_content.replace('<div class="codehilite">',
-        '<div class="code-toolbar"><pre class="language-python">')
-    html_content = html_content.replace('</div>\n\n<p>Output:</p>', 
-        '</pre></div>\n\n<p>Output:</p>')
+        '<div class="code-toolbar"><pre class="line-numbers language-python">')
+    
+    # Don't add syntax highlighting to output blocks
+    html_content = html_content.replace('</div>\n\n<p>Output:</p>\n<div class="codehilite">',
+        '</pre></div>\n\n<p>Output:</p>\n<div class="output">')
+    html_content = html_content.replace('<pre><span></span><code>Output:',
+        '<pre><code>Output:')
+    
+    # Close code blocks properly
     html_content = html_content.replace('</code></pre></div>',
         '</code></pre></div>')
     

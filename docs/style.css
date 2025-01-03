@@ -322,14 +322,15 @@ ul li:before {
 pre[class*="language-"] {
     margin: 1.5rem 0 !important;
     padding: 1.5rem !important;
-    background: #1e1e1e !important;
+    background: #1c1c1c !important;
     border-radius: 8px !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
 }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-    background: #1e1e1e !important;
+    background: #1c1c1c !important;
+    color: #d4d4d4 !important;
 }
 
 code[class*="language-"] {
@@ -337,6 +338,17 @@ code[class*="language-"] {
     color: #d4d4d4 !important;
     font-family: 'Fira Code', 'JetBrains Mono', Consolas, Monaco, 'Courier New', monospace !important;
     font-size: 0.9em !important;
+}
+
+/* Line numbers */
+.line-numbers .line-numbers-rows {
+    border-right: 1px solid #404040 !important;
+    padding: 1.5rem 0 !important;
+}
+
+.line-numbers-rows > span:before {
+    color: #6e7681 !important;
+    text-shadow: none !important;
 }
 
 /* Copy button styling */
@@ -368,21 +380,37 @@ div.code-toolbar > .toolbar button:hover {
     transform: translateY(-1px);
 }
 
-/* Token colors */
-.token.comment { color: #6a9955 !important; }
+/* Token colors - Cursor theme */
+.token.comment { color: #6A9955 !important; }
 .token.string { color: #ce9178 !important; }
 .token.number { color: #b5cea8 !important; }
 .token.keyword { color: #569cd6 !important; }
 .token.function { color: #dcdcaa !important; }
 .token.class-name { color: #4ec9b0 !important; }
 .token.operator { color: #d4d4d4 !important; }
+.token.punctuation { color: #d4d4d4 !important; }
+.token.property { color: #9cdcfe !important; }
+.token.builtin { color: #4ec9b0 !important; }
 
-/* Output block styling */
-.output pre {
+/* Output block styling - No syntax highlighting */
+.output {
     background: var(--code-bg) !important;
-    color: var(--text-color) !important;
     border-left: 4px solid var(--accent-color);
     margin: 1.5rem 0;
     padding: 1.5rem;
     border-radius: 8px;
+}
+
+.output pre {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    color: var(--text-color) !important;
+    box-shadow: none !important;
+}
+
+.output code {
+    color: var(--text-color) !important;
+    background: transparent !important;
+    padding: 0 !important;
 } 

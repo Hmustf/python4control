@@ -63,63 +63,81 @@
 </blockquote>
 <h3 id="basic-python-concepts">🔧 Basic Python Concepts</h3>
 <p>Variables in Python are dynamically typed and easy to work with:</p>
-<div class="language-python"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mf">123.3</span>        <span class="c1"># float</span>
+<div class="language-python"><table class="language-pythontable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mf">123.3</span>        <span class="c1"># float</span>
 <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Some text&quot;</span>  <span class="c1"># string</span>
 <span class="n">x</span> <span class="o">=</span> <span class="kc">True</span>         <span class="c1"># boolean</span>
-</code></pre></pre></div>
+</code></pre></div></td></tr></table></div>
 
 <p>Output:</p>
-<div class="language-python"><pre><span></span><code><span class="n">Float</span><span class="o">:</span><span class="w"> </span><span class="mf">123.3</span>
+<div class="language-python"><table class="language-pythontable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Float</span><span class="o">:</span><span class="w"> </span><span class="mf">123.3</span>
 <span class="n">String</span><span class="o">:</span><span class="w"> </span><span class="n">Some</span><span class="w"> </span><span class="n">text</span>
 <span class="n">Boolean</span><span class="o">:</span><span class="w"> </span><span class="n">True</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 
 <p>Engineers often work with signals (arrays), which are handled efficiently using NumPy:</p>
-<div class="language-python"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="language-python"><table class="language-pythontable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>  <span class="c1"># Create a numpy array</span>
-</code></pre></pre></div>
+</code></pre></div></td></tr></table></div>
 
 <p>Output:</p>
-<div class="language-python"><pre><span></span><code>Basic array: [1 2 3 4]
-</code></pre></div>
+<div class="language-python"><table class="language-pythontable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Basic array: [1 2 3 4]
+</code></pre></div></td></tr></table></div>
 
 <p>Arrays can be created from individual variables:</p>
-<div class="language-python"><pre><span></span><code><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">x4</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span>
+<div class="language-python"><table class="language-pythontable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">x4</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">x4</span><span class="p">])</span>
-</code></pre></pre></div>
+</code></pre></div></td></tr></table></div>
 
 <p>Output:</p>
-<div class="language-python"><pre><span></span><code><span class="nb nb-Type">Array</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">variables</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">]</span>
-</code></pre></div>
+<div class="language-python"><table class="language-pythontable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb nb-Type">Array</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">variables</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
 
 <p>NumPy provides convenient functions for creating arrays:</p>
-<div class="language-python"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>          <span class="c1"># Array of zeros</span>
+<div class="language-python"><table class="language-pythontable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>          <span class="c1"># Array of zeros</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>      <span class="c1"># 2x2 matrix of ones</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># 5 evenly spaced points from 0 to 1</span>
-</code></pre></pre></div>
+</code></pre></div></td></tr></table></div>
 
 <p>Output:</p>
-<div class="language-python"><pre><span></span><code>Zeros array: [0. 0. 0. 0.]
+<div class="language-python"><table class="language-pythontable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>Zeros array: [0. 0. 0. 0.]
 Ones matrix:
 [[1. 1.]
  [1. 1.]]
 Linspace array: [0.   0.25 0.5  0.75 1.  ]
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 
 <h3 id="control-flow-and-functions">🔄 Control Flow and Functions</h3>
 <p>Python's clean syntax makes control flow and functions intuitive:</p>
-<div class="language-python"><pre><span></span><code><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="language-python"><table class="language-pythontable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Square a number.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">square</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># y = 4</span>
-</code></pre></pre></div>
+</code></pre></div></td></tr></table></div>
 
 <p>Output:</p>
-<div class="language-python"><pre><span></span><code>Square of 2 is 4
-</code></pre></div>
+<div class="language-python"><table class="language-pythontable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Square of 2 is 4
+</code></pre></div></td></tr></table></div>
 
 <h3 id="symbolic-mathematics-with-sympy">➗ Symbolic Mathematics with SymPy</h3>
 <p>SymPy enables symbolic mathematics, which is crucial for control system analysis. For example, we can solve the quadratic equation:</p>
@@ -127,7 +145,20 @@ Linspace array: [0.   0.25 0.5  0.75 1.  ]
 <p>Or simplify trigonometric identities like:</p>
 <p>$\sin^2(x) + \cos^2(x) = 1$</p>
 <p>Here's how to do it in code:</p>
-<div class="language-python"><pre><span></span><code><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">solve</span><span class="p">,</span> <span class="n">simplify</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">sin</span>
+<div class="language-python"><table class="language-pythontable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">solve</span><span class="p">,</span> <span class="n">simplify</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">sin</span>
 
 <span class="c1"># Define symbolic variables</span>
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">)</span>
@@ -141,10 +172,20 @@ Linspace array: [0.   0.25 0.5  0.75 1.  ]
 
 <span class="c1"># Simplify expressions</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">simplify</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></pre></div>
+</code></pre></div></td></tr></table></div>
 
 <p>Output:</p>
-<div class="language-python"><pre><span></span><code><span class="gd">--- Symbolic Mathematics Examples ---</span>
+<div class="language-python"><table class="language-pythontable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gd">--- Symbolic Mathematics Examples ---</span>
 <span class="w">Defined symbols: x y</span>
 
 <span class="w">Polynomial: x**2 + 2*x + 1</span>
@@ -155,12 +196,32 @@ Linspace array: [0.   0.25 0.5  0.75 1.  ]
 
 <span class="w">Simplifying sin(x)**2 + cos(x)**2</span>
 <span class="w">Result: 1</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 
 <h3 id="control-systems-with-python-control">🎛️ Control Systems with Python Control</h3>
 <p>The <code>control</code> library lets us work with transfer functions and analyze system responses. For example, consider a second-order system:</p>
 <p>$G(s) = \frac{1}{s^2 + 2s + 1}$</p>
-<div class="language-python"><pre><span></span><code><span class="kn">import</span> <span class="nn">control</span>
+<div class="language-python"><table class="language-pythontable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">control</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -181,7 +242,7 @@ Linspace array: [0.   0.25 0.5  0.75 1.  ]
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Step Response&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 
 <p>The resulting step response plot:</p>
 <p><img alt="Basic Step Response" src="plots/basic_response.png" /></p>
@@ -189,7 +250,24 @@ Linspace array: [0.   0.25 0.5  0.75 1.  ]
 <p>Let's compare first-order systems with different time constants. The transfer function form is:</p>
 <p>$G(s) = \frac{a}{s + a}$</p>
 <p>where $a$ is the inverse of the time constant $\tau = \frac{1}{a}$.</p>
-<div class="language-python"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="language-python"><table class="language-pythontable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">control</span> <span class="kn">import</span> <span class="n">TransferFunction</span><span class="p">,</span> <span class="n">step_response</span>
 
@@ -207,7 +285,7 @@ Linspace array: [0.   0.25 0.5  0.75 1.  ]
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Step Responses of First-Order Systems&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 
 <p>The resulting comparison plot:</p>
 <p><img alt="First Order System Comparison" src="plots/first_order_comparison.png" /></p>
