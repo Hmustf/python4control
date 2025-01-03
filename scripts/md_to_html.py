@@ -22,11 +22,29 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {{
+            tex: {{
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            }},
+            svg: {{
+                fontCache: 'global'
+            }}
+        }};
+    </script>
 </head>
 <body>
     <div class="page-header">
         <h1 class="project-name">{title}</h1>
-        <h2 class="project-tagline">{description}</h2>
+        <div class="project-tagline">
+            Python is a versatile programming language widely used in scientific computing and engineering. With libraries like 
+            <a href="https://numpy.org/">NumPy</a>, 
+            <a href="https://python-control.org/">Control</a>, and 
+            <a href="https://matplotlib.org/">Matplotlib</a>, 
+            it provides powerful tools for control system analysis and design.
+        </div>
         <a href="{home_path}" class="btn">← Back to Home</a>
         <a href="https://github.com/Hmustf/python4control" class="btn">View on GitHub</a>
     </div>
@@ -55,6 +73,11 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     <script>
         // Highlight code blocks
         Prism.highlightAll();
+        
+        // Force MathJax to reprocess the page
+        if (window.MathJax) {{
+            window.MathJax.typeset();
+        }}
     </script>
 </body>
 </html>
