@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tutorial 0: Python Basics for Control - Python4Control</title>
+    <title>🐍 Control System Design with Python - Python4Control</title>
     <link rel="stylesheet" href="https://pages-themes.github.io/cayman/assets/css/style.css">
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
@@ -14,92 +14,192 @@
 </head>
 <body>
     <div class="page-header">
-        <h1 class="project-name">Tutorial 0: Python Basics for Control</h1>
-        <h2 class="project-tagline">Introduction to Python for Control Systems</h2>
+        <h1 class="project-name">🐍 Control System Design with Python</h1>
+        <h2 class="project-tagline">Python is a versatile programming language widely used in scientific computing and engineering. With libraries like [NumPy](https://numpy.org/), [Control](https://python-control.org/), and [Matplotlib](https://matplotlib.org/), it provides powerful tools for control system analysis and design.</h2>
         <a href="../../" class="btn">← Back to Home</a>
         <a href="https://github.com/Hmustf/python4control" class="btn">View on GitHub</a>
     </div>
 
     <div class="main-content">
         <div class="tutorial-navigation">
-            <a href="../../" class="nav-button">← Previous</a>
-            <a class="nav-button disabled">Next →</a>
+            <a href="../../" class="nav-button">← Home</a>
+            <a href="#" class="nav-button disabled">Next →</a>
         </div>
 
-        <h1>🐍 Control System Design with Python</h1>
+        <h1 id="control-system-design-with-python">🐍 Control System Design with Python</h1>
+<h2 id="introduction-to-python-for-control-systems">Introduction to Python for Control Systems</h2>
+<p>Python is a versatile programming language widely used in scientific computing and engineering. With libraries like <a href="https://numpy.org/">NumPy</a>, <a href="https://python-control.org/">Control</a>, and <a href="https://matplotlib.org/">Matplotlib</a>, it provides powerful tools for control system analysis and design.</p>
+<p>This tutorial will guide you through:
+- Basic Python concepts for control systems
+- Symbolic mathematics with SymPy
+- Transfer function analysis
+- System response visualization</p>
+<blockquote>
+<p>💡 All code examples can be found in the following files:
+- <a href="basic_examples.py">basic_examples.py</a>
+- <a href="symbolic_example.py">symbolic_example.py</a>
+- <a href="control_examples.py">control_examples.py</a></p>
+</blockquote>
+<h3 id="basic-python-concepts">🔧 Basic Python Concepts</h3>
+<p>Variables in Python are dynamically typed and easy to work with:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mf">123.3</span>        <span class="c1"># float</span>
+<span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Some text&quot;</span>  <span class="c1"># string</span>
+<span class="n">x</span> <span class="o">=</span> <span class="kc">True</span>         <span class="c1"># boolean</span>
+</code></pre></div>
 
-        <h2>Introduction to Python for Control Systems</h2>
-        <p>Python is a versatile programming language widely used in scientific computing and engineering. With libraries like <a href="https://numpy.org/">NumPy</a>, <a href="https://python-control.org/">Control</a>, and <a href="https://matplotlib.org/">Matplotlib</a>, it provides powerful tools for control system analysis and design.</p>
+<p>Output:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">Float</span><span class="o">:</span><span class="w"> </span><span class="mf">123.3</span>
+<span class="n">String</span><span class="o">:</span><span class="w"> </span><span class="n">Some</span><span class="w"> </span><span class="n">text</span>
+<span class="n">Boolean</span><span class="o">:</span><span class="w"> </span><span class="n">True</span>
+</code></pre></div>
 
-        <p>This tutorial will guide you through:</p>
-        <ul>
-            <li>Basic Python concepts for control systems</li>
-            <li>Symbolic mathematics with SymPy</li>
-            <li>Transfer function analysis</li>
-            <li>System response visualization</li>
-        </ul>
+<p>Engineers often work with signals (arrays), which are handled efficiently using NumPy:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-        <div class="info-box">
-            <p>💡 All code examples can be found in the following files:</p>
-            <ul>
-                <li><a href="https://github.com/Hmustf/python4control/blob/main/tutorials/tutorial-0/basic_examples.py">basic_examples.py</a></li>
-                <li><a href="https://github.com/Hmustf/python4control/blob/main/tutorials/tutorial-0/symbolic_example.py">symbolic_example.py</a></li>
-                <li><a href="https://github.com/Hmustf/python4control/blob/main/tutorials/tutorial-0/control_examples.py">control_examples.py</a></li>
-            </ul>
-        </div>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>  <span class="c1"># Create a numpy array</span>
+</code></pre></div>
 
-        <h2>🔧 Basic Python Concepts</h2>
-        <p>Variables in Python are dynamically typed and easy to work with:</p>
-        <pre><code class="language-python">x = 123.3        # float
-x = "Some text"  # string
-x = True         # boolean</code></pre>
-        <div class="output">
-            <p>Output:</p>
-            <pre>Float: 123.3
-String: Some text
-Boolean: True</pre>
-        </div>
+<p>Output:</p>
+<div class="codehilite"><pre><span></span><code>Basic array: [1 2 3 4]
+</code></pre></div>
 
-        <p>Engineers often work with signals (arrays), which are handled efficiently using NumPy:</p>
-        <pre><code class="language-python">import numpy as np
+<p>Arrays can be created from individual variables:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">x4</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">x4</span><span class="p">])</span>
+</code></pre></div>
 
-x = np.array([1, 2, 3, 4])  # Create a numpy array</code></pre>
-        <div class="output">
-            <p>Output:</p>
-            <pre>Basic array: [1 2 3 4]</pre>
-        </div>
+<p>Output:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb nb-Type">Array</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">variables</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">]</span>
+</code></pre></div>
 
-        <h2>➗ Symbolic Mathematics with SymPy</h2>
-        <p>SymPy enables symbolic mathematics, which is crucial for control system analysis. For example, we can solve the quadratic equation:</p>
-        <div class="math">\[ax^2 + bx + c = 0\]</div>
-        <p>Or simplify trigonometric identities like:</p>
-        <div class="math">\[\sin^2(x) + \cos^2(x) = 1\]</div>
+<p>NumPy provides convenient functions for creating arrays:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>          <span class="c1"># Array of zeros</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>      <span class="c1"># 2x2 matrix of ones</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># 5 evenly spaced points from 0 to 1</span>
+</code></pre></div>
 
-        <h2>🎛️ Control Systems with Python Control</h2>
-        <p>The <code>control</code> library lets us work with transfer functions and analyze system responses. For example, consider a second-order system:</p>
-        <div class="math">\[G(s) = \frac{1}{s^2 + 2s + 1}\]</div>
+<p>Output:</p>
+<div class="codehilite"><pre><span></span><code>Zeros array: [0. 0. 0. 0.]
+Ones matrix:
+[[1. 1.]
+ [1. 1.]]
+Linspace array: [0.   0.25 0.5  0.75 1.  ]
+</code></pre></div>
 
-        <p>The resulting step response plot:</p>
-        <img src="plots/basic_response.png" alt="Basic Step Response">
+<h3 id="control-flow-and-functions">🔄 Control Flow and Functions</h3>
+<p>Python's clean syntax makes control flow and functions intuitive:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Square a number.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
 
-        <h2>📊 First-Order System Comparison</h2>
-        <p>Let's compare first-order systems with different time constants. The transfer function form is:</p>
-        <div class="math">\[G(s) = \frac{a}{s + a}\]</div>
-        <p>where \(a\) is the inverse of the time constant \(\tau = \frac{1}{a}\).</p>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">square</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># y = 4</span>
+</code></pre></div>
 
-        <p>The resulting comparison plot:</p>
-        <img src="plots/first_order_comparison.png" alt="First Order System Comparison">
+<p>Output:</p>
+<div class="codehilite"><pre><span></span><code>Square of 2 is 4
+</code></pre></div>
 
-        <h2>📚 Further Reading</h2>
-        <ul>
-            <li><a href="https://python-control.readthedocs.io/">Python Control Systems Library Documentation</a></li>
-            <li><a href="https://numpy.org/doc/">NumPy Documentation</a></li>
-            <li><a href="https://docs.sympy.org/latest/tutorial/">SymPy Tutorial</a></li>
-        </ul>
+<h3 id="symbolic-mathematics-with-sympy">➗ Symbolic Mathematics with SymPy</h3>
+<p>SymPy enables symbolic mathematics, which is crucial for control system analysis. For example, we can solve the quadratic equation:</p>
+<p>$ax^2 + bx + c = 0$</p>
+<p>Or simplify trigonometric identities like:</p>
+<p>$\sin^2(x) + \cos^2(x) = 1$</p>
+<p>Here's how to do it in code:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">solve</span><span class="p">,</span> <span class="n">simplify</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">sin</span>
+
+<span class="c1"># Define symbolic variables</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">)</span>
+
+<span class="c1"># Work with polynomials</span>
+<span class="n">pol</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># Represents (x + 1)²</span>
+<span class="n">coeffs</span> <span class="o">=</span> <span class="n">pol</span><span class="o">.</span><span class="n">as_poly</span><span class="p">()</span><span class="o">.</span><span class="n">all_coeffs</span><span class="p">()</span>
+
+<span class="c1"># Solve equations</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">pol</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Simplify expressions</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">simplify</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Output:</p>
+<div class="codehilite"><pre><span></span><code><span class="gd">--- Symbolic Mathematics Examples ---</span>
+<span class="w">Defined symbols: x y</span>
+
+<span class="w">Polynomial: x**2 + 2*x + 1</span>
+<span class="w">Coefficients: [1, 2, 1]</span>
+
+<span class="w">Solutions to x**2 + 2*x + 1 = 0:</span>
+<span class="w">[-1]</span>
+
+<span class="w">Simplifying sin(x)**2 + cos(x)**2</span>
+<span class="w">Result: 1</span>
+</code></pre></div>
+
+<h3 id="control-systems-with-python-control">🎛️ Control Systems with Python Control</h3>
+<p>The <code>control</code> library lets us work with transfer functions and analyze system responses. For example, consider a second-order system:</p>
+<p>$G(s) = \frac{1}{s^2 + 2s + 1}$</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">control</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Create transfer function</span>
+<span class="n">num</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">den</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">control</span><span class="o">.</span><span class="n">TransferFunction</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">)</span>
+
+<span class="c1"># Get system information</span>
+<span class="n">zeros</span><span class="p">,</span> <span class="n">poles</span><span class="p">,</span> <span class="n">gain</span> <span class="o">=</span> <span class="n">control</span><span class="o">.</span><span class="n">zero_pole_gain</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="c1"># Plot step response</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">control</span><span class="o">.</span><span class="n">step_response</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Step Response&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+
+<p>The resulting step response plot:</p>
+<p><img alt="Basic Step Response" src="plots/basic_response.png" /></p>
+<h3 id="first-order-system-comparison">📊 First-Order System Comparison</h3>
+<p>Let's compare first-order systems with different time constants. The transfer function form is:</p>
+<p>$G(s) = \frac{a}{s + a}$</p>
+<p>where $a$ is the inverse of the time constant $\tau = \frac{1}{a}$.</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">control</span> <span class="kn">import</span> <span class="n">TransferFunction</span><span class="p">,</span> <span class="n">step_response</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">TransferFunction</span><span class="p">([</span><span class="n">a</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="p">])</span>
+    <span class="n">t</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">step_response</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Step Responses of First-Order Systems&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+
+<p>The resulting comparison plot:</p>
+<p><img alt="First Order System Comparison" src="plots/first_order_comparison.png" /></p>
+<hr />
+<p>This tutorial demonstrates how Python can be used effectively for control system analysis and design. The combination of NumPy for numerical computations, Control for system analysis, and Matplotlib for visualization makes Python a powerful tool for control engineering. </p>
+<p>📚 <strong>Further Reading</strong>:
+- <a href="https://python-control.readthedocs.io/">Python Control Systems Library Documentation</a>
+- <a href="https://numpy.org/doc/">NumPy Documentation</a>
+- <a href="https://docs.sympy.org/latest/tutorial/">SymPy Tutorial</a> </p>
 
         <div class="tutorial-navigation">
-            <a href="../../" class="nav-button">← Previous</a>
-            <a class="nav-button disabled">Next →</a>
+            <a href="../../" class="nav-button">← Home</a>
+            <a href="#" class="nav-button disabled">Next →</a>
         </div>
 
         <footer class="site-footer">
@@ -115,4 +215,4 @@ x = np.array([1, 2, 3, 4])  # Create a numpy array</code></pre>
         Prism.highlightAll();
     </script>
 </body>
-</html> 
+</html>
