@@ -1,6 +1,8 @@
 site_name: Python4Control
 theme:
   name: material
+  logo: assets/logo.png
+  favicon: assets/favicon.png
   palette:
     # Light mode
     - media: "(prefers-color-scheme: light)"
@@ -41,9 +43,7 @@ theme:
   
   # Icons
   icon:
-    logo: material/sine-wave
     repo: fontawesome/brands/github
-  favicon: assets/favicon.png
 
 # Extra CSS for additional styling
 extra_css:
