@@ -1,0 +1,8 @@
+[
+  {
+    "id": 0,
+    "path": "tutorial-0",
+    "title": "\ud83d\udc0d Control System Design with Python",
+    "description": "Python is a versatile programming language widely used in scientific computing and engineering. With libraries like [NumPy](https://numpy.org/), [Control](https://python-control.org/), and [Matplotlib](https://matplotlib.org/), it provides powerful tools for control system analysis and design."
+  }
+]
