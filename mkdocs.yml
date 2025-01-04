@@ -52,7 +52,7 @@ extra_css:
 # Navigation structure
 nav:
   - Home: index.md
-  - Course:
+  - Control System Design with Python:
     - Introduction: course1/01_intro.md
   - Tutorials:
     - Getting Started: tutorials/tutorial-0/index.md
