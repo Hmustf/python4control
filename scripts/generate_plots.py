@@ -5,7 +5,7 @@ import os
 from scipy.signal import lti, step, impulse
 
 # Create the images directory if it doesn't exist
-os.makedirs('docs/images', exist_ok=True)
+os.makedirs('docs/static/images', exist_ok=True)
 
 # Set the default figure size
 plt.rcParams['figure.figsize'] = [10, 8]
@@ -26,7 +26,7 @@ def generate_single_step_response():
     plt.ylabel('Amplitude')
     
     # Save the plot
-    plt.savefig('docs/images/step_response.png', dpi=300, bbox_inches='tight')
+    plt.savefig('docs/static/images/step_response.png', dpi=300, bbox_inches='tight')
     plt.close()
 
 def generate_multiple_step_responses():
@@ -50,7 +50,7 @@ def generate_multiple_step_responses():
     plt.legend(loc='lower right')
     
     # Save the plot
-    plt.savefig('docs/images/multiple_step_responses.png', dpi=300, bbox_inches='tight')
+    plt.savefig('docs/static/images/multiple_step_responses.png', dpi=300, bbox_inches='tight')
     plt.close()
 
 def generate_root_locus():
@@ -63,7 +63,7 @@ def generate_root_locus():
     plt.title('Root Locus Plot')
     
     # Save the plot
-    plt.savefig('docs/images/root_locus.png', dpi=300, bbox_inches='tight')
+    plt.savefig('docs/static/images/root_locus.png', dpi=300, bbox_inches='tight')
     plt.close()
 
 def generate_bandpass_bode():
@@ -85,7 +85,7 @@ def generate_bandpass_bode():
     control.bode_plot(system, dB=True)
     
     # Save the plot
-    plt.savefig('docs/images/bandpass_bode.png', dpi=300, bbox_inches='tight')
+    plt.savefig('docs/static/images/bandpass_bode.png', dpi=300, bbox_inches='tight')
     plt.close()
 
 def generate_system_responses():
@@ -128,7 +128,7 @@ def generate_system_responses():
     plt.title('Ramp Response')
     
     plt.tight_layout()
-    plt.savefig('docs/images/system_responses.png', dpi=300, bbox_inches='tight')
+    plt.savefig('docs/static/images/system_responses.png', dpi=300, bbox_inches='tight')
     plt.close()
 
 if __name__ == '__main__':
@@ -143,4 +143,4 @@ if __name__ == '__main__':
     print("✓ Generated bandpass bode plot")
     generate_system_responses()
     print("✓ Generated system responses plot")
-    print("Done! Plots have been saved to docs/images/") 
+    print("Done! Plots have been saved to docs/static/images/") 

@@ -73,3 +73,6 @@ copyright: |
   &copy; 2024 <a href="https://github.com/Hmustf"  target="_blank" rel="noopener">Hmustf</a>
 
 use_directory_urls: false
+
+extra_css:
+  - static/css/extra.css
