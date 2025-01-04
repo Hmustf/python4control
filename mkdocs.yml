@@ -39,8 +39,8 @@ theme:
 
 nav:
   - Control System Design with Python:
-    - Introduction: course1/01_intro.md
-    - Control Functions: course1/02_control_func.md
+    - Introduction: control-design/01_intro.md
+    - Control Functions: control-design/02_control_func.md
 
 markdown_extensions:
   - pymdownx.highlight:
