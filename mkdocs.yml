@@ -36,6 +36,7 @@ theme:
       accent: lime
   icon:
     repo: fontawesome/brands/github
+  custom_dir: docs/overrides
 
 nav:
   - Home: index.md
