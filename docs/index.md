@@ -90,3 +90,32 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Python Control Systems Library](https://python-control.readthedocs.io/)
 - [NumPy Documentation](https://numpy.org/doc/)
 - [Matplotlib Documentation](https://matplotlib.org/) 
+
+# Welcome to Python4Control
+
+Welcome to the Python for Control Systems course. This documentation provides comprehensive materials for learning control systems using Python.
+
+## Course Structure
+
+### Control System Design with Python
+- Introduction to Control Systems
+- Topic A: Fundamentals
+- Topic B: Advanced Concepts
+
+## Getting Started
+
+Choose a topic from the navigation menu to begin your learning journey.
+
+## 🎯 What You'll Learn
+
+* Control system analysis using Python
+* Transfer function manipulation
+* System response visualization
+* Controller design and tuning
+* Real-world control applications
+
+## 📚 Prerequisites
+
+* Python 3.8+
+* Basic understanding of control systems theory
+* Basic Python programming knowledge 
