@@ -74,6 +74,8 @@ extra:
   social:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/Hmustf/python4control
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/mustafa-h-5a3bba1a9/
 
 copyright: |
   &copy; 2024 <a href="https://github.com/Hmustf"  target="_blank" rel="noopener">Hmustf</a>
