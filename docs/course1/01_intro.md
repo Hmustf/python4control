@@ -106,7 +106,7 @@ s^2 + 2 s + 1
 ```
 
 <p align="center">
-  <img src="../../images/step_response.png" width="60%" alt="Step Response">
+  <img src="../static/images/step_response.png" width="60%" alt="Step Response">
 </p>
 
 #### Multiple Step Responses
@@ -168,7 +168,7 @@ s + 5
 ```
 
 <p align="center">
-  <img src="../../images/multiple_step_responses.png" width="60%" alt="Multiple Step Responses">
+  <img src="../static/images/multiple_step_responses.png" width="60%" alt="Multiple Step Responses">
 </p>
 
 This example shows how to:

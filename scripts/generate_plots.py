@@ -1,6 +1,10 @@
 import control
 import numpy as np
 import matplotlib.pyplot as plt
+import os
+
+# Create the images directory if it doesn't exist
+os.makedirs('docs/static/images', exist_ok=True)
 
 # Generate single step response plot
 def generate_single_step_response():
@@ -14,7 +18,7 @@ def generate_single_step_response():
     plt.title('Step Response')
     plt.xlabel('Time (s)')
     plt.ylabel('Amplitude')
-    plt.savefig('docs/images/step_response.png', bbox_inches='tight', dpi=300)
+    plt.savefig('docs/static/images/step_response.png', bbox_inches='tight', dpi=300)
     plt.close()
 
 # Generate multiple step responses plot
@@ -32,7 +36,7 @@ def generate_multiple_step_responses():
     plt.ylabel('Amplitude')
     plt.title('Step Responses for Different Systems')
     plt.legend(loc='lower right')
-    plt.savefig('docs/images/multiple_step_responses.png', bbox_inches='tight', dpi=300)
+    plt.savefig('docs/static/images/multiple_step_responses.png', bbox_inches='tight', dpi=300)
     plt.close()
 
 if __name__ == "__main__":
