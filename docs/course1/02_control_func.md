@@ -27,7 +27,7 @@ plt.show()
 ```
 
 <p align="center">
-<img src="../../images/root_locus.png" width="60%">
+<img src="../images/root_locus.png" width="60%">
 </p>
 
 ## Bode Plot for a Band-Pass Filter
@@ -65,7 +65,7 @@ plt.show()
 ```
 
 <p align="center">
-<img src="../../images/bandpass_bode.png" width="60%">
+<img src="../images/bandpass_bode.png" width="60%">
 </p>
 
 ## Impulse, Step, and Ramp Responses
@@ -126,5 +126,5 @@ plt.show()
 ```
 
 <p align="center">
-<img src="../../images/system_responses.png" width="60%">
+<img src="../images/system_responses.png" width="60%">
 </p>
