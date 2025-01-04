@@ -9,8 +9,9 @@ venv/
 ENV/
 .DS_Store
 
-# Ignore all PNGs except those in plots directories
+# Ignore all PNGs except those in specific directories
 *.png
 !plots/*.png
 !tutorials/*/plots/*.png
-!docs/tutorials/*/plots/*.png 
+!docs/tutorials/*/plots/*.png
+!docs/assets/*.png 
