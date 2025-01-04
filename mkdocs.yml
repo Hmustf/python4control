@@ -38,6 +38,7 @@ theme:
     repo: fontawesome/brands/github
 
 nav:
+  - Home: index.md
   - Control System Design with Python:
     - Introduction: control-design/01_intro.md
     - Control Functions: control-design/02_control_func.md
@@ -55,6 +56,11 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.mark
   - attr_list
+  - md_in_html
+  - tables
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
