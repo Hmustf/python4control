@@ -4,51 +4,25 @@
 
 An example transfer function is given:
 
-\[
+$$
 G(s) = \frac{1}{(s+1)(s+2)(s+3)}
-\]
+$$
 
-Using symbolic calculations:
+Using Python's control library:
 
 ```python
-from sympy import symbols, solve, simplify
-import matplotlib.pyplot as plt
+import control
 import numpy as np
+import matplotlib.pyplot as plt
 
-# Define the symbolic variables
-s, k = symbols('s k')
+# Create transfer function G(s) = 1/((s+1)(s+2)(s+3))
+G = control.TransferFunction([1], [1, 6, 11, 6])
 
-# Define the transfer function
-Gs = 1 / ((s + 1) * (s + 2) * (s + 3))
-
-# Closed-loop transfer function
-Ts = k * Gs / (1 + k * Gs)
-
-# Numerator and denominator
-numerator, denominator = simplify(Ts).as_numer_denom()
-
-# Plot the root locus
-real_parts = []
-imag_parts = []
-
-k_values = np.linspace(0, 20, 100)
-
-for kv in k_values:
-    d_subs = denominator.subs(k, kv)
-    poles = solve(d_subs, s)
-    for pole in poles:
-        real_parts.append(pole.as_real_imag()[0])
-        imag_parts.append(pole.as_real_imag()[1])
-
-plt.figure(figsize=(8, 6))
-plt.scatter(real_parts, imag_parts, color='blue', label='Poles')
-plt.axhline(0, color='black', linestyle='--')
-plt.axvline(0, color='black', linestyle='--')
-plt.xlabel('Real Part')
-plt.ylabel('Imaginary Part')
+# Generate root locus plot
+plt.figure()
+control.root_locus(G)
 plt.title('Root Locus Plot')
-plt.legend()
-plt.grid()
+plt.grid(True)
 plt.show()
 ```
 
@@ -60,58 +34,33 @@ plt.show()
 
 Given the band-pass filter:
 
-\[
+$$
 G(s) = \frac{1}{Q w_0^2} \frac{1}{s^2 + \frac{w_0}{Q} s + w_0^2}
-\]
+$$
 
 Using Python:
 
 ```python
-from sympy import I, pi, lambdify
+import control
+import numpy as np
+import matplotlib.pyplot as plt
 
 # Define parameters
-df = 10
-f0 = 100
-w0 = 2 * pi * f0
+f0 = 100  # Center frequency in Hz
+df = 10   # Bandwidth in Hz
+w0 = 2 * np.pi * f0
 fl = f0 - df
 fh = f0 + df
 Q = f0 / (fh - fl)
 
-# Define the transfer function
-Gs = (1 / Q) * w0**2 / (s**2 + (w0 / Q) * s + w0**2)
+# Create transfer function
+num = [w0**2 / Q]
+den = [1, w0/Q, w0**2]
+system = control.TransferFunction(num, den)
 
-# Substitute s with jw
-w = symbols('w')
-Gjw = Gs.subs(s, I * w)
-
-# Create frequency values
-w_values = np.linspace(0, 1000, 1000)
-Gjw_func = lambdify(w, Gjw, 'numpy')
-
-# Calculate gain and phase
-gain = np.abs(Gjw_func(w_values))
-phase = np.angle(Gjw_func(w_values), deg=True)
-
-# Plot Bode Plot
+# Generate Bode plot
 plt.figure(figsize=(8, 12))
-
-plt.subplot(2, 1, 1)
-plt.plot(w_values / (2 * np.pi), 20 * np.log10(gain), label='Gain')
-plt.xscale('log')
-plt.grid(True, which="both", linestyle='--')
-plt.xlabel('Frequency (Hz)')
-plt.ylabel('Gain (dB)')
-plt.title('Bode Plot - Gain')
-
-plt.subplot(2, 1, 2)
-plt.plot(w_values / (2 * np.pi), phase, label='Phase', color='orange')
-plt.xscale('log')
-plt.grid(True, which="both", linestyle='--')
-plt.xlabel('Frequency (Hz)')
-plt.ylabel('Phase (degrees)')
-plt.title('Bode Plot - Phase')
-
-plt.tight_layout()
+control.bode_plot(system, dB=True)
 plt.show()
 ```
 
@@ -123,37 +72,33 @@ plt.show()
 
 For a given transfer function:
 
-\[
+$$
 G(s) = \frac{1}{s+1}
-\]
+$$
 
 Calculate the impulse, step, and ramp responses:
 
 ```python
 from scipy.signal import lti, step, impulse
+import numpy as np
+import matplotlib.pyplot as plt
 
-# Define transfer function numerator and denominator
+# Define transfer function G(s) = 1/(s+1)
 num = [1]
 den = [1, 1]
-
-# Define LTI system
 system = lti(num, den)
 
 # Time vector
 t = np.linspace(0, 10, 500)
 
-# Step response
+# Get responses
 t_step, y_step = step(system, T=t)
-
-# Impulse response
 t_impulse, y_impulse = impulse(system, T=t)
-
-# Ramp response
 ramp_input = t
-_, y_ramp, _ = lti(num, den).output(ramp_input, T=t)
+_, y_ramp, _ = system.output(ramp_input, T=t)
 
 # Plot responses
-plt.figure(figsize=(10, 8))
+plt.figure(figsize=(10, 12))
 
 plt.subplot(3, 1, 1)
 plt.plot(t_impulse, y_impulse, label='Impulse Response')
