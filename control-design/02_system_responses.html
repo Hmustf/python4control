@@ -783,18 +783,59 @@
 <p><img alt="Ramp Response" src="../images/examples/ramp_response.png" /></p>
 <h2 id="response-characteristics">Response Characteristics</h2>
 <h3 id="rise-time">Rise Time</h3>
-<p>The time required for the system output to rise from 10% to 90% of its final value.
-- In our example: 2.30 seconds</p>
+<p>The time required for the system output to rise from 10% to 90% of its final value.</p>
+<div class="arithmatex">\[t_r = t_{90\%} - t_{10\%}\]</div>
+<p>where:
+- <span class="arithmatex">\(t_r\)</span> is the rise time
+- <span class="arithmatex">\(t_{90\%}\)</span> is the time when output reaches 90% of final value
+- <span class="arithmatex">\(t_{10\%}\)</span> is the time when output reaches 10% of final value</p>
+<p>For a first-order system with transfer function <span class="arithmatex">\(G(s) = \frac{1}{\tau s + 1}\)</span>:</p>
+<div class="arithmatex">\[t_r = 2.2\tau\]</div>
+<ul>
+<li>In our example: 2.30 seconds</li>
+</ul>
 <h3 id="settling-time">Settling Time</h3>
-<p>The time required for the system to settle within ±2% of its final value.
-- For our first-order system: 3.91 seconds (approximately 4 time constants)</p>
+<p>The time required for the system to settle within ±2% of its final value.</p>
+<p>For a second-order system:</p>
+<div class="arithmatex">\[t_s = \frac{4}{\zeta\omega_n}\]</div>
+<p>where:
+- <span class="arithmatex">\(t_s\)</span> is the settling time
+- <span class="arithmatex">\(\zeta\)</span> is the damping ratio
+- <span class="arithmatex">\(\omega_n\)</span> is the natural frequency</p>
+<p>For a first-order system:</p>
+<div class="arithmatex">\[t_s = 4\tau\]</div>
+<ul>
+<li>For our first-order system: 3.91 seconds (approximately 4 time constants)</li>
+</ul>
 <h3 id="overshoot">Overshoot</h3>
-<p>The maximum peak value of the response curve measured from the desired response of the system.
-- Our first-order system has no overshoot</p>
+<p>The maximum peak value of the response curve measured from the desired response of the system.</p>
+<p>For a second-order system:</p>
+<div class="arithmatex">\[M_p = e^{-\pi\zeta/\sqrt{1-\zeta^2}} \times 100\%\]</div>
+<p>where:
+- <span class="arithmatex">\(M_p\)</span> is the percentage overshoot
+- <span class="arithmatex">\(\zeta\)</span> is the damping ratio</p>
+<p>The peak time (time to reach maximum overshoot) is:</p>
+<div class="arithmatex">\[t_p = \frac{\pi}{\omega_n\sqrt{1-\zeta^2}}\]</div>
+<ul>
+<li>Our first-order system has no overshoot</li>
+</ul>
 <h3 id="steady-state-error">Steady-State Error</h3>
-<p>The difference between the desired output and the actual output as time approaches infinity.
-- In our step response example: 0 (Final value = 1.00)
-- In our ramp response example: Constant error rate of 1.00</p>
+<p>The difference between the desired output and the actual output as time approaches infinity.</p>
+<p>For a step input:
+<span class="arithmatex">\(<span class="arithmatex">\(e_{ss} = \lim_{t \to \infty} [r(t) - y(t)] = \lim_{s \to 0} [sR(s) - sY(s)]\)</span>\)</span></p>
+<p>For a system with unity feedback:
+<span class="arithmatex">\(<span class="arithmatex">\(e_{ss} = \lim_{s \to 0} \frac{R(s)}{1 + G(s)}\)</span>\)</span></p>
+<p>For different input types:
+- Step input: <span class="arithmatex">\(e_{ss} = \frac{1}{1 + K_p}\)</span>
+- Ramp input: <span class="arithmatex">\(e_{ss} = \frac{1}{K_v}\)</span>
+- Parabolic input: <span class="arithmatex">\(e_{ss} = \frac{1}{K_a}\)</span></p>
+<p>where:
+- <span class="arithmatex">\(K_p\)</span> is the position error constant
+- <span class="arithmatex">\(K_v\)</span> is the velocity error constant
+- <span class="arithmatex">\(K_a\)</span> is the acceleration error constant</p>
+<p>Results in our examples:
+- Step response: <span class="arithmatex">\(e_{ss} = 0\)</span> (Final value = 1.00)
+- Ramp response: Constant error rate of 1.00</p>
 <h2 id="example-analyzing-second-order-system">Example: Analyzing Second-Order System</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kn">import</span> <span class="nn">control</span>
