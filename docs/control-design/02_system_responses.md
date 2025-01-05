@@ -233,7 +233,7 @@ The system type N is determined by the number of free integrators in the open-lo
 !!! example "Practice Example 1: First-Order System"
     Consider a first-order system $G(s) = \frac{1}{s + 1}$ (Type 0):
 
-    **Step Input Analysis** :material-function:
+    **Step Input Analysis** <span class="material-function"></span>
     
     1. Calculate Position Error Constant:
        <div class="center" markdown>
