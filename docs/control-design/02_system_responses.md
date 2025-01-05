@@ -233,7 +233,7 @@ The system type N is determined by the number of free integrators in the open-lo
 !!! example "Practice Example 1: First-Order System"
     Consider a first-order system $G(s) = \frac{1}{s + 1}$ (Type 0):
 
-    **Step Input Analysis** {: .icon-function }
+    **Step Input Analysis** {: .icon-function}
     
     1. Calculate Position Error Constant:
        <div class="center" markdown>
@@ -249,7 +249,7 @@ The system type N is determined by the number of free integrators in the open-lo
        
        </div>
 
-    **Ramp Input Analysis** {: .icon-chart-line }
+    **Ramp Input Analysis** {: .icon-chart-line}
     
     1. Calculate Velocity Error Constant:
        <div class="center" markdown>
@@ -268,7 +268,7 @@ The system type N is determined by the number of free integrators in the open-lo
 !!! example "Practice Example 2: Type 1 System"
     Consider a Type 1 system $G(s) = \frac{K}{s(s + 1)}$:
 
-    **Step Input Analysis** {: .icon-function }
+    **Step Input Analysis** {: .icon-function}
     
     1. Calculate Position Error Constant:
        <div class="center" markdown>
@@ -284,7 +284,7 @@ The system type N is determined by the number of free integrators in the open-lo
        
        </div>
 
-    **Ramp Input Analysis** {: .icon-chart-line }
+    **Ramp Input Analysis** {: .icon-chart-line}
     
     1. Calculate Velocity Error Constant:
        <div class="center" markdown>
