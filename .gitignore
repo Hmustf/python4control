@@ -1,18 +1,5 @@
+site/
+.venv/
 __pycache__/
-*.py[cod]
-*$py.class
-.Python
-.env
-.venv
-env/
-venv/
-ENV/
 .DS_Store
-
-# Ignore all PNGs except those in specific directories
-*.png
-!plots/*.png
-!tutorials/*/plots/*.png
-!docs/tutorials/*/plots/*.png
-!docs/assets/*.png
-!docs/images/examples/*.png 
+docs/javascripts/firebase-config.js 
