@@ -197,3 +197,72 @@
         margin: 1em auto;
     }
 } 
+
+/* Table of Contents styling */
+.md-nav__list {
+    padding-left: 0;
+}
+
+.md-nav__item {
+    padding: 0.2em 0;
+}
+
+.md-nav__link {
+    color: var(--md-default-fg-color--light);
+    font-size: 0.9em;
+    padding: 0.4em 0.6em;
+    border-left: 4px solid transparent;
+    transition: all 0.2s ease;
+    display: block;
+    margin: 0.2em 0;
+}
+
+.md-nav__link:hover {
+    color: var(--md-accent-fg-color);
+    background-color: var(--md-code-bg-color);
+    border-left-color: var(--md-accent-fg-color);
+    padding-left: 1em;
+}
+
+.md-nav__link--active {
+    color: var(--md-accent-fg-color);
+    font-weight: 600;
+    border-left-color: var(--md-accent-fg-color);
+    background-color: var(--md-code-bg-color);
+    padding-left: 1em;
+}
+
+/* Nested items styling */
+.md-nav__item .md-nav__item {
+    padding-left: 1em;
+}
+
+/* Section headers in TOC */
+.md-nav__title {
+    font-weight: 700;
+    color: var(--md-default-fg-color);
+    font-size: 1em;
+    padding: 1em 0 0.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Add divider between sections */
+.md-nav__title:not(:first-child) {
+    border-top: 1px solid var(--md-default-fg-color--lightest);
+    margin-top: 1em;
+}
+
+/* Scrollbar styling for TOC */
+.md-nav__list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.md-nav__list::-webkit-scrollbar-track {
+    background: var(--md-default-bg-color);
+}
+
+.md-nav__list::-webkit-scrollbar-thumb {
+    background: var(--md-accent-fg-color);
+    border-radius: 2px;
+} 
