@@ -167,6 +167,12 @@
     margin: 2em auto;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    cursor: zoom-in;
+    transition: transform 0.2s ease-in-out;
+}
+
+.responsive-image:hover {
+    transform: scale(1.01);
 }
 
 /* Specific control for large plots */
@@ -175,6 +181,13 @@
     max-width: 100%;
     display: block;
     margin: 2em auto;
+    cursor: zoom-in;
+    transition: transform 0.2s ease-in-out;
+}
+
+.md-typeset img[alt="Second-Order Response"]:hover,
+.md-typeset img[alt="Second-Order System Performance Matrix"]:hover {
+    transform: scale(1.01);
 }
 
 /* Responsive adjustments */
