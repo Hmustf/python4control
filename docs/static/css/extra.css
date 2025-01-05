@@ -160,19 +160,19 @@
 } 
 
 /* Control icon sizes */
-.md-typeset .material-function,
-.md-typeset .material-chart-line,
-.md-typeset span[class*="material-"],
-.md-typeset :is(.emojione, .twemoji, .gemoji) {
-    font-size: 1.1rem !important;
+.md-typeset :is(.emojione, .twemoji, .gemoji),
+.md-typeset span[class*="fa-"],
+.md-typeset .fontawesome-solid-function,
+.md-typeset .fontawesome-solid-chart-line {
+    font-size: 0.9rem !important;
     vertical-align: middle;
     position: relative;
     top: -0.1em;
 }
 
 /* Ensure icons in admonitions are properly sized */
-.md-typeset .admonition-title .twemoji,
-.md-typeset .admonition-title span[class*="material-"] {
+.md-typeset .admonition-title :is(.emojione, .twemoji, .gemoji),
+.md-typeset .admonition-title span[class*="fa-"] {
     font-size: 1rem !important;
     vertical-align: middle;
     margin-right: 0.5em;
