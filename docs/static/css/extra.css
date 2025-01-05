@@ -226,19 +226,20 @@
     content: 'show_chart';
 }
 
-/* Clean implementation of icon styles */
-.icon-function,
-.icon-chart-line {
-    position: relative;
-    padding-right: 1.5em;
+/* Remove all previous icon-related CSS and replace with this simple implementation */
+.icon-function strong,
+.icon-chart-line strong {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
 }
 
-.icon-function::after,
-.icon-chart-line::after {
+.icon-function strong::after,
+.icon-chart-line strong::after {
     font-family: 'Material Icons';
+    font-size: 1em;
     font-weight: normal;
     font-style: normal;
-    font-size: 1.2em;
     display: inline-block;
     line-height: 1;
     text-transform: none;
@@ -246,18 +247,13 @@
     word-wrap: normal;
     white-space: nowrap;
     direction: ltr;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0.7;
 }
 
-.icon-function::after {
+.icon-function strong::after {
     content: "functions";
 }
 
-.icon-chart-line::after {
+.icon-chart-line strong::after {
     content: "show_chart";
 }
 
