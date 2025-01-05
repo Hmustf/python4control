@@ -28,4 +28,94 @@
 /* Hover effect */
 .md-typeset table:not([class]) tr:hover {
     background-color: #f8f9fa;
+}
+
+/* Enhanced headings */
+.md-typeset h1 {
+    color: #2E86AB;
+    font-weight: 700;
+    border-bottom: 2px solid #2E86AB;
+    padding-bottom: 0.3em;
+    margin-bottom: 1.5em;
+}
+
+.md-typeset h2 {
+    color: #1B1B1E;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    padding-bottom: 0.3em;
+}
+
+.md-typeset h3 {
+    color: #2E86AB;
+    font-weight: 600;
+    margin-top: 2em;
+}
+
+.md-typeset h4 {
+    color: #1B1B1E;
+    font-weight: 500;
+}
+
+/* Admonition styling */
+.md-typeset .admonition {
+    border-left: 4px solid;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.05);
+    margin: 1.5em 0;
+}
+
+.md-typeset .admonition-title {
+    font-weight: 600;
+    padding: 12px 16px;
+}
+
+/* Info admonition */
+.md-typeset .admonition.info {
+    border-color: #2E86AB;
+}
+
+.md-typeset .info > .admonition-title {
+    background-color: rgba(46, 134, 171, 0.1);
+    color: #2E86AB;
+}
+
+/* Warning admonition */
+.md-typeset .admonition.warning {
+    border-color: #D64933;
+}
+
+.md-typeset .warning > .admonition-title {
+    background-color: rgba(214, 73, 51, 0.1);
+    color: #D64933;
+}
+
+/* Example admonition */
+.md-typeset .admonition.example {
+    border-color: #6C757D;
+}
+
+.md-typeset .example > .admonition-title {
+    background-color: rgba(108, 117, 125, 0.1);
+    color: #6C757D;
+}
+
+/* Note admonition */
+.md-typeset .admonition.note {
+    border-color: #4CAF50;
+}
+
+.md-typeset .note > .admonition-title {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #4CAF50;
+}
+
+/* Tip admonition */
+.md-typeset .admonition.tip {
+    border-color: #FF6B6B;
+}
+
+.md-typeset .tip > .admonition-title {
+    background-color: rgba(255, 107, 107, 0.1);
+    color: #FF6B6B;
 } 

@@ -96,66 +96,99 @@ Steady-State Error Rate: 1.00
 ### Rise Time
 The time required for the system output to rise from 10% to 90% of its final value.
 
-$$t_r = t_{90\%} - t_{10\%}$$
+!!! info "Rise Time Formula"
+    For any system:
+    
+    <div class="center" markdown>
+    
+    $$t_r = t_{90\%} - t_{10\%}$$
+    
+    </div>
+    
+    where:
+    - $t_r$ is the rise time
+    - $t_{90\%}$ is the time when output reaches 90% of final value
+    - $t_{10\%}$ is the time when output reaches 10% of final value
 
-where:
-- $t_r$ is the rise time
-- $t_{90\%}$ is the time when output reaches 90% of final value
-- $t_{10\%}$ is the time when output reaches 10% of final value
-
-For a first-order system with transfer function $G(s) = \frac{1}{\tau s + 1}$:
-
-$$t_r = 2.2\tau$$
-
-- In our example: 2.30 seconds
+!!! tip "First-Order System Rise Time"
+    For a first-order system with transfer function $G(s) = \frac{1}{\tau s + 1}$:
+    
+    <div class="center" markdown>
+    
+    $$t_r = 2.2\tau$$
+    
+    </div>
 
 ### Settling Time
 The time required for the system to settle within ±2% of its final value.
 
-For a second-order system:
-
-$$t_s = \frac{4}{\zeta\omega_n}$$
-
-where:
-- $t_s$ is the settling time
-- $\zeta$ is the damping ratio
-- $\omega_n$ is the natural frequency
-
-For a first-order system:
-
-$$t_s = 4\tau$$
-
-- For our first-order system: 3.91 seconds (approximately 4 time constants)
+!!! info "Settling Time Formulas"
+    For a second-order system:
+    
+    <div class="center" markdown>
+    
+    $$t_s = \frac{4}{\zeta\omega_n}$$
+    
+    </div>
+    
+    where:
+    - $t_s$ is the settling time
+    - $\zeta$ is the damping ratio
+    - $\omega_n$ is the natural frequency
+    
+    For a first-order system:
+    
+    <div class="center" markdown>
+    
+    $$t_s = 4\tau$$
+    
+    </div>
 
 ### Overshoot
 The maximum peak value of the response curve measured from the desired response of the system.
 
-For a second-order system:
-
-$$M_p = e^{-\pi\zeta/\sqrt{1-\zeta^2}} \times 100\%$$
-
-where:
-- $M_p$ is the percentage overshoot
-- $\zeta$ is the damping ratio
-
-The peak time (time to reach maximum overshoot) is:
-
-$$t_p = \frac{\pi}{\omega_n\sqrt{1-\zeta^2}}$$
-
-- Our first-order system has no overshoot
+!!! warning "Important: Second-Order System Overshoot"
+    For a second-order system:
+    
+    <div class="center" markdown>
+    
+    $$M_p = e^{-\pi\zeta/\sqrt{1-\zeta^2}} \times 100\%$$
+    
+    </div>
+    
+    where:
+    - $M_p$ is the percentage overshoot
+    - $\zeta$ is the damping ratio
+    
+    The peak time (time to reach maximum overshoot) is:
+    
+    <div class="center" markdown>
+    
+    $$t_p = \frac{\pi}{\omega_n\sqrt{1-\zeta^2}}$$
+    
+    </div>
 
 ### Steady-State Error
 The difference between the desired output and the actual output as time approaches infinity.
 
 #### Definition and Basic Formulas
 
-For any input $r(t)$ and output $y(t)$, the steady-state error is defined as:
-
-$$e_{ss} = \lim_{t \to \infty} [r(t) - y(t)] = \lim_{s \to 0} [sR(s) - sY(s)]$$
-
-For a unity feedback system with forward transfer function $G(s)$:
-
-$$e_{ss} = \lim_{s \to 0} \frac{R(s)}{1 + G(s)}$$
+!!! note "Steady-State Error Definition"
+    For any input $r(t)$ and output $y(t)$, the steady-state error is defined as:
+    
+    <div class="center" markdown>
+    
+    $$e_{ss} = \lim_{t \to \infty} [r(t) - y(t)] = \lim_{s \to 0} [sR(s) - sY(s)]$$
+    
+    </div>
+    
+    For a unity feedback system with forward transfer function $G(s)$:
+    
+    <div class="center" markdown>
+    
+    $$e_{ss} = \lim_{s \to 0} \frac{R(s)}{1 + G(s)}$$
+    
+    </div>
 
 #### System Type and Error Constants
 
@@ -203,22 +236,34 @@ The system type N is determined by the number of free integrators in the open-lo
     **Step Input Analysis** :material-function:
     
     1. Calculate Position Error Constant:
+       <div class="center" markdown>
        
        $K_p = G(0) = 1$
+       
+       </div>
     
     2. Calculate Steady-State Error:
+       <div class="center" markdown>
        
        $e_{ss} = \frac{1}{1 + K_p} = \frac{1}{1 + 1} = 0$
+       
+       </div>
 
     **Ramp Input Analysis** :material-chart-line:
     
     1. Calculate Velocity Error Constant:
+       <div class="center" markdown>
        
        $K_v = \lim\limits_{s \to 0} sG(s) = 0$
+       
+       </div>
     
     2. Calculate Steady-State Error:
+       <div class="center" markdown>
        
        $e_{ss} = \frac{1}{K_v} = \infty$ (constant error rate)
+       
+       </div>
 
 !!! example "Practice Example 2: Type 1 System"
     Consider a Type 1 system $G(s) = \frac{K}{s(s + 1)}$:
@@ -226,22 +271,34 @@ The system type N is determined by the number of free integrators in the open-lo
     **Step Input Analysis** :material-function:
     
     1. Calculate Position Error Constant:
+       <div class="center" markdown>
        
        $K_p = \lim\limits_{s \to 0} G(s) = \infty$
+       
+       </div>
     
     2. Calculate Steady-State Error:
+       <div class="center" markdown>
        
        $e_{ss} = \frac{1}{1 + K_p} = 0$
+       
+       </div>
 
     **Ramp Input Analysis** :material-chart-line:
     
     1. Calculate Velocity Error Constant:
+       <div class="center" markdown>
        
        $K_v = \lim\limits_{s \to 0} sG(s) = K$
+       
+       </div>
     
     2. Calculate Steady-State Error:
+       <div class="center" markdown>
        
        $e_{ss} = \frac{1}{K_v} = \frac{1}{K}$
+       
+       </div>
 
 ### Summary of Second-Order System Performance Characteristics
 
