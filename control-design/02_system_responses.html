@@ -948,98 +948,104 @@
 <div class="arithmatex">\[e_{ss} = \lim_{s \to 0} \frac{R(s)}{1 + G(s)}\]</div>
 <h4 id="system-type-and-error-constants">System Type and Error Constants</h4>
 <p>The system type N is determined by the number of free integrators in the open-loop transfer function <span class="arithmatex">\(G(s)\)</span>.</p>
+<div class="center">
 <table>
 <thead>
 <tr>
-<th>System Type</th>
-<th><span class="arithmatex">\(G(s)\)</span> Form</th>
-<th>Example</th>
+<th style="text-align: center;">System Type</th>
+<th style="text-align: center;"><span class="arithmatex">\(G(s)\)</span> Form</th>
+<th style="text-align: center;">Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Type 0</td>
-<td><span class="arithmatex">\(\frac{K}{(s + p_1)(s + p_2)...}\)</span></td>
-<td><span class="arithmatex">\(\frac{K}{s + 1}\)</span></td>
+<td style="text-align: center;">Type 0</td>
+<td style="text-align: center;"><span class="arithmatex">\(\frac{K}{(s + p_1)(s + p_2)...}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\frac{K}{s + 1}\)</span></td>
 </tr>
 <tr>
-<td>Type 1</td>
-<td><span class="arithmatex">\(\frac{K}{s(s + p_1)(s + p_2)...}\)</span></td>
-<td><span class="arithmatex">\(\frac{K}{s(s + 1)}\)</span></td>
+<td style="text-align: center;">Type 1</td>
+<td style="text-align: center;"><span class="arithmatex">\(\frac{K}{s(s + p_1)(s + p_2)...}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\frac{K}{s(s + 1)}\)</span></td>
 </tr>
 <tr>
-<td>Type 2</td>
-<td><span class="arithmatex">\(\frac{K}{s^2(s + p_1)(s + p_2)...}\)</span></td>
-<td><span class="arithmatex">\(\frac{K}{s^2(s + 1)}\)</span></td>
+<td style="text-align: center;">Type 2</td>
+<td style="text-align: center;"><span class="arithmatex">\(\frac{K}{s^2(s + p_1)(s + p_2)...}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\frac{K}{s^2(s + 1)}\)</span></td>
 </tr>
 </tbody>
 </table>
+</div>
 <h4 id="error-constants-and-their-relationships">Error Constants and Their Relationships</h4>
+<div class="center">
 <table>
 <thead>
 <tr>
-<th>Error Constant</th>
-<th>Formula</th>
-<th>Description</th>
+<th style="text-align: center;">Error Constant</th>
+<th style="text-align: center;">Formula</th>
+<th style="text-align: center;">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Position (<span class="arithmatex">\(K_p\)</span>)</td>
-<td><span class="arithmatex">\(\lim_{s \to 0} G(s)\)</span></td>
-<td>For step input</td>
+<td style="text-align: center;">Position (<span class="arithmatex">\(K_p\)</span>)</td>
+<td style="text-align: center;"><span class="arithmatex">\(\lim_{s \to 0} G(s)\)</span></td>
+<td style="text-align: center;">For step input</td>
 </tr>
 <tr>
-<td>Velocity (<span class="arithmatex">\(K_v\)</span>)</td>
-<td><span class="arithmatex">\(\lim_{s \to 0} sG(s)\)</span></td>
-<td>For ramp input</td>
+<td style="text-align: center;">Velocity (<span class="arithmatex">\(K_v\)</span>)</td>
+<td style="text-align: center;"><span class="arithmatex">\(\lim_{s \to 0} sG(s)\)</span></td>
+<td style="text-align: center;">For ramp input</td>
 </tr>
 <tr>
-<td>Acceleration (<span class="arithmatex">\(K_a\)</span>)</td>
-<td><span class="arithmatex">\(\lim_{s \to 0} s^2G(s)\)</span></td>
-<td>For parabolic input</td>
+<td style="text-align: center;">Acceleration (<span class="arithmatex">\(K_a\)</span>)</td>
+<td style="text-align: center;"><span class="arithmatex">\(\lim_{s \to 0} s^2G(s)\)</span></td>
+<td style="text-align: center;">For parabolic input</td>
 </tr>
 </tbody>
 </table>
+</div>
 <h4 id="steady-state-error-for-different-input-types">Steady-State Error for Different Input Types</h4>
+<div class="center">
 <table>
 <thead>
 <tr>
-<th>Input Type</th>
-<th>Input Function</th>
-<th>Error Formula</th>
-<th>Type 0</th>
-<th>Type 1</th>
-<th>Type 2</th>
+<th style="text-align: center;">Input Type</th>
+<th style="text-align: center;">Input Function</th>
+<th style="text-align: center;">Error Formula</th>
+<th style="text-align: center;">Type 0</th>
+<th style="text-align: center;">Type 1</th>
+<th style="text-align: center;">Type 2</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Step</td>
-<td><span class="arithmatex">\(\frac{1}{s}\)</span></td>
-<td><span class="arithmatex">\(\frac{1}{1 + K_p}\)</span></td>
-<td>Finite</td>
-<td>Zero</td>
-<td>Zero</td>
+<td style="text-align: center;">Step</td>
+<td style="text-align: center;"><span class="arithmatex">\(\frac{1}{s}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\frac{1}{1 + K_p}\)</span></td>
+<td style="text-align: center;">Finite</td>
+<td style="text-align: center;">Zero</td>
+<td style="text-align: center;">Zero</td>
 </tr>
 <tr>
-<td>Ramp</td>
-<td><span class="arithmatex">\(\frac{1}{s^2}\)</span></td>
-<td><span class="arithmatex">\(\frac{1}{K_v}\)</span></td>
-<td>Infinite</td>
-<td>Finite</td>
-<td>Zero</td>
+<td style="text-align: center;">Ramp</td>
+<td style="text-align: center;"><span class="arithmatex">\(\frac{1}{s^2}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\frac{1}{K_v}\)</span></td>
+<td style="text-align: center;">Infinite</td>
+<td style="text-align: center;">Finite</td>
+<td style="text-align: center;">Zero</td>
 </tr>
 <tr>
-<td>Parabolic</td>
-<td><span class="arithmatex">\(\frac{1}{s^3}\)</span></td>
-<td><span class="arithmatex">\(\frac{1}{K_a}\)</span></td>
-<td>Infinite</td>
-<td>Infinite</td>
-<td>Finite</td>
+<td style="text-align: center;">Parabolic</td>
+<td style="text-align: center;"><span class="arithmatex">\(\frac{1}{s^3}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\frac{1}{K_a}\)</span></td>
+<td style="text-align: center;">Infinite</td>
+<td style="text-align: center;">Infinite</td>
+<td style="text-align: center;">Finite</td>
 </tr>
 </tbody>
 </table>
+</div>
 <h4 id="example-calculations">Example Calculations</h4>
 <p>For our first-order system <span class="arithmatex">\(G(s) = \frac{1}{s + 1}\)</span> (Type 0):</p>
 <ol>
