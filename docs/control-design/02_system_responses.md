@@ -233,7 +233,7 @@ The system type N is determined by the number of free integrators in the open-lo
 !!! example "Practice Example 1: First-Order System"
     Consider a first-order system $G(s) = \frac{1}{s + 1}$ (Type 0):
 
-    **Step Input Analysis** { .material-function }
+    **Step Input Analysis**
     
     1. Calculate Position Error Constant:
        <div class="center" markdown>
@@ -249,7 +249,7 @@ The system type N is determined by the number of free integrators in the open-lo
        
        </div>
 
-    **Ramp Input Analysis** { .material-chart-line }
+    **Ramp Input Analysis**
     
     1. Calculate Velocity Error Constant:
        <div class="center" markdown>
@@ -268,7 +268,7 @@ The system type N is determined by the number of free integrators in the open-lo
 !!! example "Practice Example 2: Type 1 System"
     Consider a Type 1 system $G(s) = \frac{K}{s(s + 1)}$:
 
-    **Step Input Analysis** { .material-function }
+    **Step Input Analysis**
     
     1. Calculate Position Error Constant:
        <div class="center" markdown>
@@ -284,7 +284,7 @@ The system type N is determined by the number of free integrators in the open-lo
        
        </div>
 
-    **Ramp Input Analysis** { .material-chart-line }
+    **Ramp Input Analysis**
     
     1. Calculate Velocity Error Constant:
        <div class="center" markdown>
@@ -348,7 +348,7 @@ def find_nearest(array, value):
     return idx
 
 # Create figure with a specific background color
-plt.figure(figsize=(14, 8))
+plt.figure(figsize=(10, 6))
 ax = plt.gca()
 ax.set_facecolor('#ffffff')
 plt.gcf().set_facecolor('#ffffff')
@@ -461,7 +461,7 @@ plt.legend(loc='upper right', fontsize=11, fancybox=True,
 
 # Adjust layout and save with high DPI
 plt.tight_layout()
-plt.savefig('docs/images/examples/second_order_response.png', dpi=300, bbox_inches='tight', 
+plt.savefig('docs/images/examples/second_order_response.png', dpi=200, bbox_inches='tight', 
             facecolor='white', edgecolor='none')
 
 # Show plot
