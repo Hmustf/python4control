@@ -519,15 +519,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#improving-steady-state-error" class="md-nav__link">
-    <span class="md-ellipsis">
-      Improving Steady-State Error
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -778,15 +769,6 @@
   <a href="#example-calculations" class="md-nav__link">
     <span class="md-ellipsis">
       Example Calculations
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#improving-steady-state-error" class="md-nav__link">
-    <span class="md-ellipsis">
-      Improving Steady-State Error
     </span>
   </a>
   
@@ -1065,43 +1047,58 @@
 </table>
 </div>
 <h4 id="example-calculations">Example Calculations</h4>
-<p>For our first-order system <span class="arithmatex">\(G(s) = \frac{1}{s + 1}\)</span> (Type 0):</p>
+<div class="admonition example">
+<p class="admonition-title">Practice Example 1: First-Order System</p>
+<p>Consider a first-order system <span class="arithmatex">\(G(s) = \frac{1}{s + 1}\)</span> (Type 0):</p>
+<p><strong>Step Input Analysis</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.6 5.29c-1.1-.1-2.07.71-2.17 1.82L13.18 10H16v2h-3l-.44 5.07a3.986 3.986 0 0 1-4.33 3.63 4 4 0 0 1-3.06-1.87l1.5-1.5c.24.74.9 1.31 1.73 1.38 1.1.1 2.07-.71 2.17-1.82L11 12H8v-2h3.17l.27-3.07c.19-2.2 2.13-3.83 4.33-3.63 1.31.11 2.41.84 3.06 1.87l-1.5 1.5c-.24-.74-.9-1.31-1.73-1.38"/></svg></span></p>
 <ol>
-<li>Step Input:</li>
-<li><span class="arithmatex">\(K_p = G(0) = 1\)</span></li>
 <li>
-<p><span class="arithmatex">\(e_{ss} = \frac{1}{1 + K_p} = \frac{1}{1 + 1} = 0\)</span></p>
+<p>Calculate Position Error Constant:
+   <span class="arithmatex">\(<span class="arithmatex">\(K_p = G(0) = 1\)</span>\)</span></p>
 </li>
 <li>
-<p>Ramp Input:</p>
+<p>Calculate Steady-State Error:
+   <span class="arithmatex">\(<span class="arithmatex">\(e_{ss} = \frac{1}{1 + K_p} = \frac{1}{1 + 1} = 0\)</span>\)</span></p>
 </li>
-<li><span class="arithmatex">\(K_v = \lim_{s \to 0} sG(s) = 0\)</span></li>
-<li><span class="arithmatex">\(e_{ss} = \frac{1}{K_v} = \infty\)</span> (constant error rate)</li>
 </ol>
-<p>For a Type 1 system <span class="arithmatex">\(G(s) = \frac{K}{s(s + 1)}\)</span>:</p>
+<p><strong>Ramp Input Analysis</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16 11.78 4.24-7.33 1.73 1-5.23 9.05-6.51-3.75L5.46 19H22v2H2V3h2v14.54L9.5 8z"/></svg></span></p>
 <ol>
-<li>Step Input:</li>
-<li><span class="arithmatex">\(K_p = \infty\)</span></li>
 <li>
-<p><span class="arithmatex">\(e_{ss} = 0\)</span></p>
+<p>Calculate Velocity Error Constant:
+   <span class="arithmatex">\(<span class="arithmatex">\(K_v = \lim_{s \to 0} sG(s) = 0\)</span>\)</span></p>
 </li>
 <li>
-<p>Ramp Input:</p>
+<p>Calculate Steady-State Error:
+   <span class="arithmatex">\(<span class="arithmatex">\(e_{ss} = \frac{1}{K_v} = \infty \text{ (constant error rate)}\)</span>\)</span></p>
 </li>
-<li><span class="arithmatex">\(K_v = K\)</span></li>
-<li><span class="arithmatex">\(e_{ss} = \frac{1}{K}\)</span></li>
 </ol>
-<h4 id="improving-steady-state-error">Improving Steady-State Error</h4>
-<p>To improve steady-state error, you can:</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Practice Example 2: Type 1 System</p>
+<p>Consider a Type 1 system <span class="arithmatex">\(G(s) = \frac{K}{s(s + 1)}\)</span>:</p>
+<p><strong>Step Input Analysis</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.6 5.29c-1.1-.1-2.07.71-2.17 1.82L13.18 10H16v2h-3l-.44 5.07a3.986 3.986 0 0 1-4.33 3.63 4 4 0 0 1-3.06-1.87l1.5-1.5c.24.74.9 1.31 1.73 1.38 1.1.1 2.07-.71 2.17-1.82L11 12H8v-2h3.17l.27-3.07c.19-2.2 2.13-3.83 4.33-3.63 1.31.11 2.41.84 3.06 1.87l-1.5 1.5c-.24-.74-.9-1.31-1.73-1.38"/></svg></span></p>
 <ol>
-<li>Increase the system type (add integrators)</li>
-<li>Increase the gain <span class="arithmatex">\(K\)</span></li>
-<li>Add compensation networks</li>
-<li>Use integral control in a PID controller</li>
+<li>
+<p>Calculate Position Error Constant:
+   <span class="arithmatex">\(<span class="arithmatex">\(K_p = \lim_{s \to 0} G(s) = \infty\)</span>\)</span></p>
+</li>
+<li>
+<p>Calculate Steady-State Error:
+   <span class="arithmatex">\(<span class="arithmatex">\(e_{ss} = \frac{1}{1 + K_p} = 0\)</span>\)</span></p>
+</li>
 </ol>
-<p>Results in our examples:
-- Step response: <span class="arithmatex">\(e_{ss} = 0\)</span> (Final value = 1.00)
-- Ramp response: Constant error rate of 1.00 (Type 0 system)</p>
+<p><strong>Ramp Input Analysis</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16 11.78 4.24-7.33 1.73 1-5.23 9.05-6.51-3.75L5.46 19H22v2H2V3h2v14.54L9.5 8z"/></svg></span></p>
+<ol>
+<li>
+<p>Calculate Velocity Error Constant:
+   <span class="arithmatex">\(<span class="arithmatex">\(K_v = \lim_{s \to 0} sG(s) = K\)</span>\)</span></p>
+</li>
+<li>
+<p>Calculate Steady-State Error:
+   <span class="arithmatex">\(<span class="arithmatex">\(e_{ss} = \frac{1}{K_v} = \frac{1}{K}\)</span>\)</span></p>
+</li>
+</ol>
+</div>
 <h3 id="summary-of-second-order-system-performance-characteristics">Summary of Second-Order System Performance Characteristics</h3>
 <p>The following figure summarizes the relationships between system parameters and performance characteristics:</p>
 <p><img alt="Second-Order System Performance Matrix" src="../images/examples/Second_Order_Response_performance_matrix.png" /></p>
