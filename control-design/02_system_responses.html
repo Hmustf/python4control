@@ -471,6 +471,66 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Steady-State Error">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition-and-basic-formulas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definition and Basic Formulas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-type-and-error-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Type and Error Constants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-constants-and-their-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Constants and Their Relationships
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steady-state-error-for-different-input-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steady-State Error for Different Input Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Calculations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improving-steady-state-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Improving Steady-State Error
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -666,6 +726,66 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Steady-State Error">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition-and-basic-formulas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definition and Basic Formulas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-type-and-error-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Type and Error Constants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-constants-and-their-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Constants and Their Relationships
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steady-state-error-for-different-input-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steady-State Error for Different Input Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Calculations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improving-steady-state-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Improving Steady-State Error
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -821,21 +941,143 @@
 </ul>
 <h3 id="steady-state-error">Steady-State Error</h3>
 <p>The difference between the desired output and the actual output as time approaches infinity.</p>
-<p>For a step input:
-<span class="arithmatex">\(<span class="arithmatex">\(e_{ss} = \lim_{t \to \infty} [r(t) - y(t)] = \lim_{s \to 0} [sR(s) - sY(s)]\)</span>\)</span></p>
-<p>For a system with unity feedback:
-<span class="arithmatex">\(<span class="arithmatex">\(e_{ss} = \lim_{s \to 0} \frac{R(s)}{1 + G(s)}\)</span>\)</span></p>
-<p>For different input types:
-- Step input: <span class="arithmatex">\(e_{ss} = \frac{1}{1 + K_p}\)</span>
-- Ramp input: <span class="arithmatex">\(e_{ss} = \frac{1}{K_v}\)</span>
-- Parabolic input: <span class="arithmatex">\(e_{ss} = \frac{1}{K_a}\)</span></p>
-<p>where:
-- <span class="arithmatex">\(K_p\)</span> is the position error constant
-- <span class="arithmatex">\(K_v\)</span> is the velocity error constant
-- <span class="arithmatex">\(K_a\)</span> is the acceleration error constant</p>
+<h4 id="definition-and-basic-formulas">Definition and Basic Formulas</h4>
+<p>For any input <span class="arithmatex">\(r(t)\)</span> and output <span class="arithmatex">\(y(t)\)</span>, the steady-state error is defined as:</p>
+<div class="arithmatex">\[e_{ss} = \lim_{t \to \infty} [r(t) - y(t)] = \lim_{s \to 0} [sR(s) - sY(s)]\]</div>
+<p>For a unity feedback system with forward transfer function <span class="arithmatex">\(G(s)\)</span>:</p>
+<div class="arithmatex">\[e_{ss} = \lim_{s \to 0} \frac{R(s)}{1 + G(s)}\]</div>
+<h4 id="system-type-and-error-constants">System Type and Error Constants</h4>
+<p>The system type N is determined by the number of free integrators in the open-loop transfer function <span class="arithmatex">\(G(s)\)</span>.</p>
+<table>
+<thead>
+<tr>
+<th>System Type</th>
+<th><span class="arithmatex">\(G(s)\)</span> Form</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type 0</td>
+<td><span class="arithmatex">\(\frac{K}{(s + p_1)(s + p_2)...}\)</span></td>
+<td><span class="arithmatex">\(\frac{K}{s + 1}\)</span></td>
+</tr>
+<tr>
+<td>Type 1</td>
+<td><span class="arithmatex">\(\frac{K}{s(s + p_1)(s + p_2)...}\)</span></td>
+<td><span class="arithmatex">\(\frac{K}{s(s + 1)}\)</span></td>
+</tr>
+<tr>
+<td>Type 2</td>
+<td><span class="arithmatex">\(\frac{K}{s^2(s + p_1)(s + p_2)...}\)</span></td>
+<td><span class="arithmatex">\(\frac{K}{s^2(s + 1)}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h4 id="error-constants-and-their-relationships">Error Constants and Their Relationships</h4>
+<table>
+<thead>
+<tr>
+<th>Error Constant</th>
+<th>Formula</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Position (<span class="arithmatex">\(K_p\)</span>)</td>
+<td><span class="arithmatex">\(\lim_{s \to 0} G(s)\)</span></td>
+<td>For step input</td>
+</tr>
+<tr>
+<td>Velocity (<span class="arithmatex">\(K_v\)</span>)</td>
+<td><span class="arithmatex">\(\lim_{s \to 0} sG(s)\)</span></td>
+<td>For ramp input</td>
+</tr>
+<tr>
+<td>Acceleration (<span class="arithmatex">\(K_a\)</span>)</td>
+<td><span class="arithmatex">\(\lim_{s \to 0} s^2G(s)\)</span></td>
+<td>For parabolic input</td>
+</tr>
+</tbody>
+</table>
+<h4 id="steady-state-error-for-different-input-types">Steady-State Error for Different Input Types</h4>
+<table>
+<thead>
+<tr>
+<th>Input Type</th>
+<th>Input Function</th>
+<th>Error Formula</th>
+<th>Type 0</th>
+<th>Type 1</th>
+<th>Type 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Step</td>
+<td><span class="arithmatex">\(\frac{1}{s}\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{1 + K_p}\)</span></td>
+<td>Finite</td>
+<td>Zero</td>
+<td>Zero</td>
+</tr>
+<tr>
+<td>Ramp</td>
+<td><span class="arithmatex">\(\frac{1}{s^2}\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{K_v}\)</span></td>
+<td>Infinite</td>
+<td>Finite</td>
+<td>Zero</td>
+</tr>
+<tr>
+<td>Parabolic</td>
+<td><span class="arithmatex">\(\frac{1}{s^3}\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{K_a}\)</span></td>
+<td>Infinite</td>
+<td>Infinite</td>
+<td>Finite</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-calculations">Example Calculations</h4>
+<p>For our first-order system <span class="arithmatex">\(G(s) = \frac{1}{s + 1}\)</span> (Type 0):</p>
+<ol>
+<li>Step Input:</li>
+<li><span class="arithmatex">\(K_p = G(0) = 1\)</span></li>
+<li>
+<p><span class="arithmatex">\(e_{ss} = \frac{1}{1 + K_p} = \frac{1}{1 + 1} = 0\)</span></p>
+</li>
+<li>
+<p>Ramp Input:</p>
+</li>
+<li><span class="arithmatex">\(K_v = \lim_{s \to 0} sG(s) = 0\)</span></li>
+<li><span class="arithmatex">\(e_{ss} = \frac{1}{K_v} = \infty\)</span> (constant error rate)</li>
+</ol>
+<p>For a Type 1 system <span class="arithmatex">\(G(s) = \frac{K}{s(s + 1)}\)</span>:</p>
+<ol>
+<li>Step Input:</li>
+<li><span class="arithmatex">\(K_p = \infty\)</span></li>
+<li>
+<p><span class="arithmatex">\(e_{ss} = 0\)</span></p>
+</li>
+<li>
+<p>Ramp Input:</p>
+</li>
+<li><span class="arithmatex">\(K_v = K\)</span></li>
+<li><span class="arithmatex">\(e_{ss} = \frac{1}{K}\)</span></li>
+</ol>
+<h4 id="improving-steady-state-error">Improving Steady-State Error</h4>
+<p>To improve steady-state error, you can:</p>
+<ol>
+<li>Increase the system type (add integrators)</li>
+<li>Increase the gain <span class="arithmatex">\(K\)</span></li>
+<li>Add compensation networks</li>
+<li>Use integral control in a PID controller</li>
+</ol>
 <p>Results in our examples:
 - Step response: <span class="arithmatex">\(e_{ss} = 0\)</span> (Final value = 1.00)
-- Ramp response: Constant error rate of 1.00</p>
+- Ramp response: Constant error rate of 1.00 (Type 0 system)</p>
 <h2 id="example-analyzing-second-order-system">Example: Analyzing Second-Order System</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kn">import</span> <span class="nn">control</span>
