@@ -71,13 +71,8 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 
 extra_javascript:
-  - https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js
-  - https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js
-  - javascripts/firebase-config.js
-  - javascripts/counter.js
   - javascripts/mathjax.js
   - javascripts/zoom.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 extra:
