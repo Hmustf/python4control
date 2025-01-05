@@ -303,38 +303,3 @@
     background: var(--md-accent-fg-color);
     border-radius: 2px;
 } 
-
-/* View Counter Styling */
-.view-counter-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem;
-    margin: 0 1rem;
-    color: var(--md-footer-fg-color--lighter);
-    font-size: 0.9rem;
-    opacity: 0.7;
-    transition: opacity 0.2s ease-in-out;
-}
-
-.view-counter-container:hover {
-    opacity: 1;
-}
-
-.view-counter-label {
-    margin-right: 0.25rem;
-}
-
-#view-counter {
-    font-weight: 500;
-}
-
-#view-counter.loading {
-    animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-    0% { opacity: 0.5; }
-    50% { opacity: 1; }
-    100% { opacity: 0.5; }
-} 
