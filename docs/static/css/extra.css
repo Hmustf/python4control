@@ -3,7 +3,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2em 0;
+    margin: 1em 0;
+    width: 100%;
+    overflow-x: auto;
 }
 
 /* Table styling */
@@ -11,17 +13,19 @@
     border: 1px solid rgba(0,0,0,.15);
     box-shadow: 0 2px 4px rgba(0,0,0,.05);
     background-color: #fff;
+    font-size: 0.9em;
+    max-width: 100%;
 }
 
 .md-typeset table:not([class]) th {
     background-color: #f8f9fa;
     color: #333;
     font-weight: 600;
-    padding: 12px 16px;
+    padding: 8px 12px;
 }
 
 .md-typeset table:not([class]) td {
-    padding: 12px 16px;
+    padding: 8px 12px;
     border-top: 1px solid rgba(0,0,0,.1);
 }
 
@@ -35,26 +39,30 @@
     color: #2E86AB;
     font-weight: 700;
     border-bottom: 2px solid #2E86AB;
-    padding-bottom: 0.3em;
-    margin-bottom: 1.5em;
+    padding-bottom: 0.2em;
+    margin-bottom: 1em;
+    font-size: 2em;
 }
 
 .md-typeset h2 {
     color: #1B1B1E;
     font-weight: 600;
     border-bottom: 1px solid rgba(0,0,0,.1);
-    padding-bottom: 0.3em;
+    padding-bottom: 0.2em;
+    font-size: 1.5em;
 }
 
 .md-typeset h3 {
     color: #2E86AB;
     font-weight: 600;
-    margin-top: 2em;
+    margin-top: 1.5em;
+    font-size: 1.2em;
 }
 
 .md-typeset h4 {
     color: #1B1B1E;
     font-weight: 500;
+    font-size: 1.1em;
 }
 
 /* Admonition styling */
@@ -62,12 +70,27 @@
     border-left: 4px solid;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0,0,0,.05);
-    margin: 1.5em 0;
+    margin: 1em 0;
+    font-size: 0.9em;
+    max-width: 100%;
 }
 
 .md-typeset .admonition-title {
     font-weight: 600;
-    padding: 12px 16px;
+    padding: 8px 12px;
+    margin: 0;
+}
+
+/* Admonition content padding */
+.md-typeset .admonition > * {
+    padding: 0.4rem 0.8rem;
+    margin: 0;
+}
+
+/* Math display adjustments */
+.md-typeset .math {
+    font-size: 0.95em;
+    margin: 0.5em 0;
 }
 
 /* Info admonition */
@@ -118,4 +141,20 @@
 .md-typeset .tip > .admonition-title {
     background-color: rgba(255, 107, 107, 0.1);
     color: #FF6B6B;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .md-typeset table:not([class]) {
+        font-size: 0.8em;
+    }
+    
+    .md-typeset .admonition {
+        font-size: 0.85em;
+    }
+    
+    .md-typeset h1 { font-size: 1.8em; }
+    .md-typeset h2 { font-size: 1.4em; }
+    .md-typeset h3 { font-size: 1.1em; }
+    .md-typeset h4 { font-size: 1em; }
 } 
