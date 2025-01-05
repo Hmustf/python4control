@@ -197,38 +197,43 @@ The system type N is determined by the number of free integrators in the open-lo
 
 #### Example Calculations
 
-For our first-order system $G(s) = \frac{1}{s + 1}$ (Type 0):
+!!! example "Practice Example 1: First-Order System"
+    Consider a first-order system $G(s) = \frac{1}{s + 1}$ (Type 0):
 
-1. Step Input:
-   - $K_p = G(0) = 1$
-   - $e_{ss} = \frac{1}{1 + K_p} = \frac{1}{1 + 1} = 0$
+    **Step Input Analysis** :material-function:
+    
+    1. Calculate Position Error Constant:
+       $$K_p = G(0) = 1$$
+    
+    2. Calculate Steady-State Error:
+       $$e_{ss} = \frac{1}{1 + K_p} = \frac{1}{1 + 1} = 0$$
 
-2. Ramp Input:
-   - $K_v = \lim_{s \to 0} sG(s) = 0$
-   - $e_{ss} = \frac{1}{K_v} = \infty$ (constant error rate)
+    **Ramp Input Analysis** :material-chart-line:
+    
+    1. Calculate Velocity Error Constant:
+       $$K_v = \lim_{s \to 0} sG(s) = 0$$
+    
+    2. Calculate Steady-State Error:
+       $$e_{ss} = \frac{1}{K_v} = \infty \text{ (constant error rate)}$$
 
-For a Type 1 system $G(s) = \frac{K}{s(s + 1)}$:
+!!! example "Practice Example 2: Type 1 System"
+    Consider a Type 1 system $G(s) = \frac{K}{s(s + 1)}$:
 
-1. Step Input:
-   - $K_p = \infty$
-   - $e_{ss} = 0$
+    **Step Input Analysis** :material-function:
+    
+    1. Calculate Position Error Constant:
+       $$K_p = \lim_{s \to 0} G(s) = \infty$$
+    
+    2. Calculate Steady-State Error:
+       $$e_{ss} = \frac{1}{1 + K_p} = 0$$
 
-2. Ramp Input:
-   - $K_v = K$
-   - $e_{ss} = \frac{1}{K}$
-
-#### Improving Steady-State Error
-
-To improve steady-state error, you can:
-
-1. Increase the system type (add integrators)
-2. Increase the gain $K$
-3. Add compensation networks
-4. Use integral control in a PID controller
-
-Results in our examples:
-- Step response: $e_{ss} = 0$ (Final value = 1.00)
-- Ramp response: Constant error rate of 1.00 (Type 0 system)
+    **Ramp Input Analysis** :material-chart-line:
+    
+    1. Calculate Velocity Error Constant:
+       $$K_v = \lim_{s \to 0} sG(s) = K$$
+    
+    2. Calculate Steady-State Error:
+       $$e_{ss} = \frac{1}{K_v} = \frac{1}{K}$$
 
 ### Summary of Second-Order System Performance Characteristics
 
