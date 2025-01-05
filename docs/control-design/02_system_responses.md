@@ -233,7 +233,7 @@ The system type N is determined by the number of free integrators in the open-lo
 !!! example "Practice Example 1: First-Order System"
     Consider a first-order system $G(s) = \frac{1}{s + 1}$ (Type 0):
 
-    **Step Input Analysis**
+    **Step Input Analysis** {: .icon-function }
     
     1. Calculate Position Error Constant:
        <div class="center" markdown>
@@ -249,7 +249,7 @@ The system type N is determined by the number of free integrators in the open-lo
        
        </div>
 
-    **Ramp Input Analysis**
+    **Ramp Input Analysis** {: .icon-chart-line }
     
     1. Calculate Velocity Error Constant:
        <div class="center" markdown>
@@ -268,7 +268,7 @@ The system type N is determined by the number of free integrators in the open-lo
 !!! example "Practice Example 2: Type 1 System"
     Consider a Type 1 system $G(s) = \frac{K}{s(s + 1)}$:
 
-    **Step Input Analysis**
+    **Step Input Analysis** {: .icon-function }
     
     1. Calculate Position Error Constant:
        <div class="center" markdown>
@@ -284,7 +284,7 @@ The system type N is determined by the number of free integrators in the open-lo
        
        </div>
 
-    **Ramp Input Analysis**
+    **Ramp Input Analysis** {: .icon-chart-line }
     
     1. Calculate Velocity Error Constant:
        <div class="center" markdown>
@@ -304,7 +304,7 @@ The system type N is determined by the number of free integrators in the open-lo
 
 The following figure summarizes the relationships between system parameters and performance characteristics:
 
-![Second-Order System Performance Matrix](../images/examples/Second_Order_Response_performance_matrix.png)
+![Second-Order System Performance Matrix](../images/examples/Second_Order_Response_performance_matrix.png){: .responsive-image }
 
 ## Example: Analyzing Second-Order System
 
@@ -348,7 +348,7 @@ def find_nearest(array, value):
     return idx
 
 # Create figure with a specific background color
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(8, 5))  # Even smaller figure size
 ax = plt.gca()
 ax.set_facecolor('#ffffff')
 plt.gcf().set_facecolor('#ffffff')
@@ -461,7 +461,7 @@ plt.legend(loc='upper right', fontsize=11, fancybox=True,
 
 # Adjust layout and save with high DPI
 plt.tight_layout()
-plt.savefig('docs/images/examples/second_order_response.png', dpi=200, bbox_inches='tight', 
+plt.savefig('docs/images/examples/second_order_response.png', dpi=150, bbox_inches='tight', 
             facecolor='white', edgecolor='none')
 
 # Show plot
@@ -479,7 +479,7 @@ Overshoot: 16.3%
 Settling Time: 8.09 seconds
 ```
 
-![Second-Order Response](../images/examples/second_order_response.png)
+![Second-Order Response](../images/examples/second_order_response.png){: .responsive-image }
 
 ## Exercises
 

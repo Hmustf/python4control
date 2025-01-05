@@ -224,4 +224,45 @@
 
 .material-chart-line::before {
     content: 'show_chart';
+}
+
+/* Icon styles */
+.icon-function::after,
+.icon-chart-line::after {
+    font-family: "Material Icons";
+    font-size: 1.1em;
+    vertical-align: middle;
+    margin-left: 0.3em;
+    opacity: 0.7;
+}
+
+.icon-function::after {
+    content: "functions";
+}
+
+.icon-chart-line::after {
+    content: "show_chart";
+}
+
+/* Responsive image controls */
+.responsive-image {
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin: 2em auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .responsive-image {
+        max-width: 100%;
+        margin: 1em auto;
+    }
+    
+    .icon-function::after,
+    .icon-chart-line::after {
+        font-size: 1em;
+    }
 } 
