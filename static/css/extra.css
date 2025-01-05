@@ -10,28 +10,30 @@
 
 /* Table styling */
 .md-typeset table:not([class]) {
-    border: 1px solid rgba(0,0,0,.15);
+    border: 1px solid var(--md-default-fg-color--lightest);
     box-shadow: 0 2px 4px rgba(0,0,0,.05);
-    background-color: #fff;
+    background-color: var(--md-default-bg-color);
     font-size: 0.9em;
     max-width: 100%;
 }
 
 .md-typeset table:not([class]) th {
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: var(--md-default-bg-color--light);
+    color: var(--md-default-fg-color);
     font-weight: 600;
     padding: 8px 12px;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
 }
 
 .md-typeset table:not([class]) td {
     padding: 8px 12px;
-    border-top: 1px solid rgba(0,0,0,.1);
+    border-top: 1px solid var(--md-default-fg-color--lightest);
+    color: var(--md-default-fg-color);
 }
 
 /* Hover effect */
 .md-typeset table:not([class]) tr:hover {
-    background-color: #f8f9fa;
+    background-color: var(--md-default-bg-color--light);
 }
 
 /* Enhanced headings */
