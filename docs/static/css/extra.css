@@ -161,9 +161,20 @@
 
 /* Control icon sizes */
 .md-typeset .material-function,
-.md-typeset .material-chart-line {
-    font-size: 1.1em;  /* Reduced from default */
+.md-typeset .material-chart-line,
+.md-typeset span[class*="material-"] {
+    font-size: 0.7em !important;  /* Much smaller size */
     vertical-align: middle;
+    position: relative;
+    top: -0.1em;  /* Slight vertical adjustment */
+}
+
+/* Ensure icons in admonitions are properly sized */
+.md-typeset .admonition-title .twemoji,
+.md-typeset .admonition-title span[class*="material-"] {
+    font-size: 1em !important;
+    vertical-align: middle;
+    margin-right: 0.5em;
 }
 
 /* Control image sizes */
