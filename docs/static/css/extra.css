@@ -158,3 +158,38 @@
     .md-typeset h3 { font-size: 1.1em; }
     .md-typeset h4 { font-size: 1em; }
 } 
+
+/* Control icon sizes */
+.md-typeset .material-function,
+.md-typeset .material-chart-line {
+    font-size: 1.1em;  /* Reduced from default */
+    vertical-align: middle;
+}
+
+/* Control image sizes */
+.md-typeset img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Specific control for large plots */
+.md-typeset img[alt="Second-Order Response"],
+.md-typeset img[alt="Second-Order System Performance Matrix"] {
+    max-width: 80%;
+    display: block;
+    margin: 1em auto;
+}
+
+/* Ensure images are centered */
+.md-typeset p > img {
+    display: block;
+    margin: 1em auto;
+}
+
+/* Responsive image adjustments */
+@media screen and (max-width: 768px) {
+    .md-typeset img[alt="Second-Order Response"],
+    .md-typeset img[alt="Second-Order System Performance Matrix"] {
+        max-width: 100%;
+    }
+} 
