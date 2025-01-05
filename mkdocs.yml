@@ -1,7 +1,5 @@
 site_name: Python4Control
 site_url: https://Hmustf.github.io/python4control/
-repo_url: https://github.com/Hmustf/python4control
-repo_name: Hmustf/python4control
 
 docs_dir: docs
 site_dir: site
@@ -34,8 +32,6 @@ theme:
         name: Switch to light mode    
       primary: teal
       accent: lime
-  icon:
-    repo: fontawesome/brands/github
   custom_dir: docs/overrides
 
 nav:
