@@ -230,6 +230,12 @@ Results in our examples:
 - Step response: $e_{ss} = 0$ (Final value = 1.00)
 - Ramp response: Constant error rate of 1.00 (Type 0 system)
 
+### Summary of Second-Order System Performance Characteristics
+
+The following figure summarizes the relationships between system parameters and performance characteristics:
+
+![Second-Order System Performance Matrix](../images/examples/Second_Order_Response_performance_matrix.png)
+
 ## Example: Analyzing Second-Order System
 
 ```python
