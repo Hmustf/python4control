@@ -182,7 +182,7 @@ t = 5.0, y = 0.0067
 ```
 
 <p align="center">
-  <img src="../images/examples/differential_equation.png" width="80%" alt="Differential Equation Solution">
+  <img src="../images/examples/differential_equation.png" width="100%" alt="Differential Equation Solution" data-lightbox>
 </p>
 
 ### Advanced Plotting Techniques
@@ -262,7 +262,7 @@ t = 3.1416:
 ```
 
 <p align="center">
-  <img src="../images/examples/multiple_plots.png" width="80%" alt="Multiple Plots Example">
+  <img src="../images/examples/multiple_plots.png" width="100%" alt="Multiple Plots Example" data-lightbox>
 </p>
 
 #### Scatter Plots with Color Mapping
@@ -308,7 +308,7 @@ Maximum distance from origin: 4.2314
 ```
 
 <p align="center">
-  <img src="../images/examples/scatter_plot.png" width="80%" alt="Scatter Plot Example">
+  <img src="../images/examples/scatter_plot.png" width="80%" alt="Scatter Plot Example" data-lightbox>
 </p>
 
 ### Control Systems with Python Control
@@ -350,7 +350,7 @@ s^2 + 2 s + 1
 ```
 
 <p align="center">
-  <img src="../images/examples/step_response.png" width="80%" alt="Step Response">
+  <img src="../images/examples/step_response.png" width="100%" alt="Step Response" data-lightbox>
 </p>
 
 #### Multiple Step Responses
@@ -412,7 +412,7 @@ s + 5
 ```
 
 <p align="center">
-  <img src="../images/examples/multiple_step_responses.png" width="80%" alt="Multiple Step Responses">
+  <img src="../images/examples/multiple_step_responses.png" width="100%" alt="Multiple Step Responses" data-lightbox>
 </p>
 
 This example shows how to:
