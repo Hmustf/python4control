@@ -36,33 +36,33 @@
     background-color: var(--md-default-bg-color--light);
 }
 
-/* Enhanced headings */
+/* Enhanced headings with dark mode support */
 .md-typeset h1 {
-    color: #2E86AB;
+    color: var(--md-primary-fg-color);
     font-weight: 700;
-    border-bottom: 2px solid #2E86AB;
+    border-bottom: 2px solid var(--md-primary-fg-color);
     padding-bottom: 0.2em;
     margin-bottom: 1em;
     font-size: 2em;
 }
 
 .md-typeset h2 {
-    color: #1B1B1E;
+    color: var(--md-default-fg-color);
     font-weight: 600;
-    border-bottom: 1px solid rgba(0,0,0,.1);
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
     padding-bottom: 0.2em;
     font-size: 1.5em;
 }
 
 .md-typeset h3 {
-    color: #2E86AB;
+    color: var(--md-primary-fg-color);
     font-weight: 600;
     margin-top: 1.5em;
     font-size: 1.2em;
 }
 
 .md-typeset h4 {
-    color: #1B1B1E;
+    color: var(--md-default-fg-color);
     font-weight: 500;
     font-size: 1.1em;
 }
@@ -91,8 +91,43 @@
 
 /* Math display adjustments */
 .md-typeset .math {
-    font-size: 0.95em;
+    font-size: 1em;
+    padding: 0.2em 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.md-typeset .math.math-display {
+    text-align: center;
+    margin: 1em 0;
+    padding: 0.5em 0;
+    display: block;
+    max-width: 100%;
+}
+
+.md-typeset .MathJax {
+    outline: none;
+}
+
+.md-typeset .MathJax_Display {
     margin: 0.5em 0;
+    padding: 0.5em 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background-color: var(--md-default-bg-color);
+    border-radius: 4px;
+}
+
+/* Inline math */
+.md-typeset .math.math-inline {
+    padding: 0 0.2em;
+    vertical-align: middle;
+}
+
+/* Math in admonitions */
+.md-typeset .admonition .math {
+    background-color: inherit;
 }
 
 /* Info admonition */
