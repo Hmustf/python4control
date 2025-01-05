@@ -161,27 +161,39 @@ $$e_{ss} = \lim_{s \to 0} \frac{R(s)}{1 + G(s)}$$
 
 The system type N is determined by the number of free integrators in the open-loop transfer function $G(s)$.
 
+<div class="center" markdown>
+
 | System Type | $G(s)$ Form | Example |
-|------------|-------------|----------|
+|:----------:|:-----------:|:--------:|
 | Type 0 | $\frac{K}{(s + p_1)(s + p_2)...}$ | $\frac{K}{s + 1}$ |
 | Type 1 | $\frac{K}{s(s + p_1)(s + p_2)...}$ | $\frac{K}{s(s + 1)}$ |
 | Type 2 | $\frac{K}{s^2(s + p_1)(s + p_2)...}$ | $\frac{K}{s^2(s + 1)}$ |
 
+</div>
+
 #### Error Constants and Their Relationships
 
+<div class="center" markdown>
+
 | Error Constant | Formula | Description |
-|---------------|---------|-------------|
+|:-------------:|:-------:|:-----------:|
 | Position ($K_p$) | $\lim_{s \to 0} G(s)$ | For step input |
 | Velocity ($K_v$) | $\lim_{s \to 0} sG(s)$ | For ramp input |
 | Acceleration ($K_a$) | $\lim_{s \to 0} s^2G(s)$ | For parabolic input |
 
+</div>
+
 #### Steady-State Error for Different Input Types
 
+<div class="center" markdown>
+
 | Input Type | Input Function | Error Formula | Type 0 | Type 1 | Type 2 |
-|------------|---------------|---------------|---------|---------|---------|
+|:----------:|:-------------:|:-------------:|:-------:|:-------:|:-------:|
 | Step | $\frac{1}{s}$ | $\frac{1}{1 + K_p}$ | Finite | Zero | Zero |
 | Ramp | $\frac{1}{s^2}$ | $\frac{1}{K_v}$ | Infinite | Finite | Zero |
 | Parabolic | $\frac{1}{s^3}$ | $\frac{1}{K_a}$ | Infinite | Infinite | Finite |
+
+</div>
 
 #### Example Calculations
 
