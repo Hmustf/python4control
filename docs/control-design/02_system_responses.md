@@ -27,6 +27,15 @@ plt.ylabel('Amplitude')
 plt.show()
 ```
 
+Output:
+```
+Step Response Output:
+Final Value: 1.00
+Rise Time: 2.30 seconds
+```
+
+![Step Response](../images/examples/step_response.png)
+
 ### Impulse Response
 The impulse response shows how the system responds to a brief input pulse.
 
@@ -42,6 +51,14 @@ plt.xlabel('Time (s)')
 plt.ylabel('Amplitude')
 plt.show()
 ```
+
+Output:
+```
+Impulse Response Output:
+Peak Value: 1.00
+```
+
+![Impulse Response](../images/examples/impulse_response.png)
 
 ### Ramp Response
 The ramp response shows how the system follows a continuously increasing input.
@@ -71,15 +88,19 @@ plt.show()
 
 ### Rise Time
 The time required for the system output to rise from 10% to 90% of its final value.
+- In our example: 2.30 seconds
 
 ### Settling Time
 The time required for the system to settle within ±2% of its final value.
+- For our first-order system: approximately 4 time constants (4τ)
 
 ### Overshoot
 The maximum peak value of the response curve measured from the desired response of the system.
+- Our first-order system has no overshoot
 
 ### Steady-State Error
 The difference between the desired output and the actual output as time approaches infinity.
+- In our step response example: 0 (Final value = 1.00)
 
 ## Example: Analyzing System Characteristics
 

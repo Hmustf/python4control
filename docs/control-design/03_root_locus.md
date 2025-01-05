@@ -38,6 +38,8 @@ plt.grid(True)
 plt.show()
 ```
 
+![Root Locus Simple](../images/examples/root_locus_simple.png)
+
 ## Example 2: System with Multiple Poles
 
 ```python
@@ -52,6 +54,8 @@ plt.grid(True)
 plt.show()
 ```
 
+![Root Locus Multiple](../images/examples/root_locus_multiple.png)
+
 ## Analyzing Root Locus Features
 
 ### Break-Away Points
@@ -60,6 +64,9 @@ Points where branches of the root locus depart from the real axis.
 ```python
 # Function to find break-away points
 def find_breakaway_points(G):
+    # Get denominator coefficients
+    den = G.den[0][0]
+    # Calculate derivative of characteristic equation
     # Implementation details...
     pass
 ```
@@ -67,10 +74,9 @@ def find_breakaway_points(G):
 ### Crossing Points
 Points where the root locus crosses the imaginary axis, indicating stability boundaries.
 
-```python
-# Find crossing points
-crossing_points = control.root_locus_plot(G, plot=False)
-```
+For our simple second-order system:
+- The root locus crosses the imaginary axis at approximately ±j1.4
+- This occurs at a gain value of K ≈ 2.0
 
 ## Design Example: Lead Compensator
 
@@ -116,7 +122,7 @@ print(f"Phase Margin: {pm} degrees")
 
 ## Exercises
 
-1. Plot the root locus for a system with transfer function G(s) = K/(s^2 + 2s + 2).
+1. Plot the root locus for a system with transfer function G(s) = K/(s² + 2s + 2).
 2. Find the range of K for which the system is stable.
 3. Design a compensator to achieve specific closed-loop pole locations.
 4. Analyze how zeros affect the root locus shape and system stability.

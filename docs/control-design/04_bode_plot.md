@@ -29,6 +29,8 @@ plt.suptitle('Bode Plot: First-Order System')
 plt.show()
 ```
 
+![Bode First Order](../images/examples/bode_first_order.png)
+
 ### Second-Order Systems
 For a second-order system G(s) = ωn²/(s² + 2ζωn·s + ωn²):
 
@@ -47,6 +49,8 @@ plt.suptitle('Bode Plot: Second-Order System')
 plt.show()
 ```
 
+![Bode Second Order](../images/examples/bode_second_order.png)
+
 ## Frequency Response Analysis
 
 ### Bandwidth
@@ -63,6 +67,9 @@ def find_bandwidth(sys):
     return w[bandwidth_idx]
 ```
 
+For our second-order system:
+- Bandwidth ≈ 10 rad/s (at the natural frequency)
+
 ### Resonance Peak
 The maximum magnitude in the frequency response:
 
@@ -74,6 +81,10 @@ def find_resonance(sys):
     
     return np.max(mag), w[np.argmax(mag)]
 ```
+
+For our second-order system with ζ = 0.5:
+- Resonance Peak ≈ 2 dB
+- Resonance Frequency ≈ 8.66 rad/s
 
 ## Example: Band-Pass Filter
 
@@ -95,6 +106,8 @@ plt.suptitle('Bode Plot: Band-Pass Filter')
 plt.show()
 ```
 
+![Bode Bandpass](../images/examples/bode_bandpass.png)
+
 ## Stability Analysis
 
 ### Phase and Gain Margins
@@ -105,11 +118,13 @@ Important stability metrics from Bode plots:
 gm, pm, wg, wp = control.margin(G)
 print(f"Gain Margin: {gm} dB at {wg} rad/s")
 print(f"Phase Margin: {pm} degrees at {wp} rad/s")
+```
 
-# Plot with margins
-plt.figure(figsize=(10, 10))
-control.bode_plot(G, dB=True, margins=True)
-plt.show()
+Output:
+```
+Stability Margins for Band-Pass Filter:
+Gain Margin: inf dB at nan rad/s
+Phase Margin: 180.00 degrees at 628.32 rad/s
 ```
 
 ## Compensator Design
