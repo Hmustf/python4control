@@ -35,7 +35,7 @@ Rise Time: 2.30 seconds
 Settling Time: 3.91 seconds
 ```
 
-![Step Response](../images/examples/step_response.png)
+![Step Response](../images/examples/step_response.png){: .responsive-image}
 
 ### Impulse Response
 The impulse response shows how the system responds to a brief input pulse.
@@ -61,7 +61,7 @@ Peak Time: 0.00 seconds
 Settling Time: 3.98 seconds
 ```
 
-![Impulse Response](../images/examples/impulse_response.png)
+![Impulse Response](../images/examples/impulse_response.png){: .responsive-image}
 
 ### Ramp Response
 The ramp response shows how the system follows a continuously increasing input.
@@ -89,7 +89,7 @@ Transfer Function G(s) = 1/(s + 1)
 Steady-State Error Rate: 1.00
 ```
 
-![Ramp Response](../images/examples/ramp_response.png)
+![Ramp Response](../images/examples/ramp_response.png){: .responsive-image}
 
 ## Response Characteristics
 
@@ -304,7 +304,7 @@ The system type N is determined by the number of free integrators in the open-lo
 
 The following figure summarizes the relationships between system parameters and performance characteristics:
 
-![Second-Order System Performance Matrix](../images/examples/Second_Order_Response_performance_matrix.png){: .responsive-image }
+![Second-Order System Performance Matrix](../images/examples/Second_Order_Response_performance_matrix.png){: .responsive-image}
 
 ## Example: Analyzing Second-Order System
 
@@ -479,7 +479,7 @@ Overshoot: 16.3%
 Settling Time: 8.09 seconds
 ```
 
-![Second-Order Response](../images/examples/second_order_response.png){: .responsive-image }
+![Second-Order Response](../images/examples/second_order_response.png){: .responsive-image}
 
 ## Exercises
 
