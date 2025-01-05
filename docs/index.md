@@ -31,7 +31,7 @@ This documentation provides a structured approach to learning control systems us
 
     [:octicons-arrow-right-24: Go to tutorial](control-design/02_system_responses.md)
 
--   :material-root:{ .lg .middle } __Root Locus Analysis__
+-   :material-function-variant:{ .lg .middle } __Root Locus Analysis__
 
     ---
 
@@ -39,7 +39,7 @@ This documentation provides a structured approach to learning control systems us
 
     [:octicons-arrow-right-24: Go to tutorial](control-design/03_root_locus.md)
 
--   :material-chart-bell:{ .lg .middle } __Bode Plot Analysis__
+-   :material-chart-bell-curve:{ .lg .middle } __Bode Plot Analysis__
 
     ---
 
