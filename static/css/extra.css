@@ -309,23 +309,53 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     margin: 0 auto;
     color: var(--md-footer-fg-color);
     font-size: 0.9rem;
-    opacity: 0.7;
-    transition: opacity 0.2s ease;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
 }
 
 .view-counter-container:hover {
     opacity: 1;
+    transform: translateY(-1px);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .view-counter-label {
     margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
 }
 
 #view-counter {
     font-weight: 600;
     color: var(--md-footer-fg-color);
+    min-width: 3em;
+    text-align: left;
+}
+
+/* Loading animation for the counter */
+#view-counter.loading {
+    position: relative;
+    color: transparent;
+}
+
+#view-counter.loading::after {
+    content: "...";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--md-footer-fg-color);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { content: "."; }
+    33% { content: ".."; }
+    66% { content: "..."; }
 } 
