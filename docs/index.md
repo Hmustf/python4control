@@ -23,13 +23,29 @@ This documentation provides a structured approach to learning control systems us
 
     [:octicons-arrow-right-24: Go to tutorial](control-design/01_intro.md)
 
--   :material-function-variant:{ .lg .middle } __Control Functions__
+-   :material-chart-line:{ .lg .middle } __System Responses__
 
     ---
 
-    Master essential control system functions and their Python implementations.
+    Learn about time and frequency domain responses of control systems.
 
-    [:octicons-arrow-right-24: Go to tutorial](control-design/02_control_func.md)
+    [:octicons-arrow-right-24: Go to tutorial](control-design/02_system_responses.md)
+
+-   :material-root:{ .lg .middle } __Root Locus Analysis__
+
+    ---
+
+    Master root locus techniques for control system analysis and design.
+
+    [:octicons-arrow-right-24: Go to tutorial](control-design/03_root_locus.md)
+
+-   :material-chart-bell:{ .lg .middle } __Bode Plot Analysis__
+
+    ---
+
+    Learn frequency response analysis using Bode plots.
+
+    [:octicons-arrow-right-24: Go to tutorial](control-design/04_bode_plot.md)
 
 </div>
 

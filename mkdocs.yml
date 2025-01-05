@@ -42,7 +42,9 @@ nav:
   - Home: index.md
   - Control System Design with Python:
     - Introduction: control-design/01_intro.md
-    - Control Functions: control-design/02_control_func.md
+    - System Responses: control-design/02_system_responses.md
+    - Root Locus Analysis: control-design/03_root_locus.md
+    - Bode Plot Analysis: control-design/04_bode_plot.md
 
 markdown_extensions:
   - pymdownx.highlight:
