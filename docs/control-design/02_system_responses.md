@@ -203,18 +203,22 @@ The system type N is determined by the number of free integrators in the open-lo
     **Step Input Analysis** :material-function:
     
     1. Calculate Position Error Constant:
-       $$K_p = G(0) = 1$$
+       
+       $K_p = G(0) = 1$
     
     2. Calculate Steady-State Error:
-       $$e_{ss} = \frac{1}{1 + K_p} = \frac{1}{1 + 1} = 0$$
+       
+       $e_{ss} = \frac{1}{1 + K_p} = \frac{1}{1 + 1} = 0$
 
     **Ramp Input Analysis** :material-chart-line:
     
     1. Calculate Velocity Error Constant:
-       $$K_v = \lim_{s \to 0} sG(s) = 0$$
+       
+       $K_v = \lim\limits_{s \to 0} sG(s) = 0$
     
     2. Calculate Steady-State Error:
-       $$e_{ss} = \frac{1}{K_v} = \infty \text{ (constant error rate)}$$
+       
+       $e_{ss} = \frac{1}{K_v} = \infty$ (constant error rate)
 
 !!! example "Practice Example 2: Type 1 System"
     Consider a Type 1 system $G(s) = \frac{K}{s(s + 1)}$:
@@ -222,18 +226,22 @@ The system type N is determined by the number of free integrators in the open-lo
     **Step Input Analysis** :material-function:
     
     1. Calculate Position Error Constant:
-       $$K_p = \lim_{s \to 0} G(s) = \infty$$
+       
+       $K_p = \lim\limits_{s \to 0} G(s) = \infty$
     
     2. Calculate Steady-State Error:
-       $$e_{ss} = \frac{1}{1 + K_p} = 0$$
+       
+       $e_{ss} = \frac{1}{1 + K_p} = 0$
 
     **Ramp Input Analysis** :material-chart-line:
     
     1. Calculate Velocity Error Constant:
-       $$K_v = \lim_{s \to 0} sG(s) = K$$
+       
+       $K_v = \lim\limits_{s \to 0} sG(s) = K$
     
     2. Calculate Steady-State Error:
-       $$e_{ss} = \frac{1}{K_v} = \frac{1}{K}$$
+       
+       $e_{ss} = \frac{1}{K_v} = \frac{1}{K}$
 
 ### Summary of Second-Order System Performance Characteristics
 
