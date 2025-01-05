@@ -95,20 +95,77 @@ Steady-State Error Rate: 1.00
 
 ### Rise Time
 The time required for the system output to rise from 10% to 90% of its final value.
+
+$$t_r = t_{90\%} - t_{10\%}$$
+
+where:
+- $t_r$ is the rise time
+- $t_{90\%}$ is the time when output reaches 90% of final value
+- $t_{10\%}$ is the time when output reaches 10% of final value
+
+For a first-order system with transfer function $G(s) = \frac{1}{\tau s + 1}$:
+
+$$t_r = 2.2\tau$$
+
 - In our example: 2.30 seconds
 
 ### Settling Time
 The time required for the system to settle within ±2% of its final value.
+
+For a second-order system:
+
+$$t_s = \frac{4}{\zeta\omega_n}$$
+
+where:
+- $t_s$ is the settling time
+- $\zeta$ is the damping ratio
+- $\omega_n$ is the natural frequency
+
+For a first-order system:
+
+$$t_s = 4\tau$$
+
 - For our first-order system: 3.91 seconds (approximately 4 time constants)
 
 ### Overshoot
 The maximum peak value of the response curve measured from the desired response of the system.
+
+For a second-order system:
+
+$$M_p = e^{-\pi\zeta/\sqrt{1-\zeta^2}} \times 100\%$$
+
+where:
+- $M_p$ is the percentage overshoot
+- $\zeta$ is the damping ratio
+
+The peak time (time to reach maximum overshoot) is:
+
+$$t_p = \frac{\pi}{\omega_n\sqrt{1-\zeta^2}}$$
+
 - Our first-order system has no overshoot
 
 ### Steady-State Error
 The difference between the desired output and the actual output as time approaches infinity.
-- In our step response example: 0 (Final value = 1.00)
-- In our ramp response example: Constant error rate of 1.00
+
+For a step input:
+$$e_{ss} = \lim_{t \to \infty} [r(t) - y(t)] = \lim_{s \to 0} [sR(s) - sY(s)]$$
+
+For a system with unity feedback:
+$$e_{ss} = \lim_{s \to 0} \frac{R(s)}{1 + G(s)}$$
+
+For different input types:
+- Step input: $e_{ss} = \frac{1}{1 + K_p}$
+- Ramp input: $e_{ss} = \frac{1}{K_v}$
+- Parabolic input: $e_{ss} = \frac{1}{K_a}$
+
+where:
+- $K_p$ is the position error constant
+- $K_v$ is the velocity error constant
+- $K_a$ is the acceleration error constant
+
+Results in our examples:
+- Step response: $e_{ss} = 0$ (Final value = 1.00)
+- Ramp response: Constant error rate of 1.00
 
 ## Example: Analyzing Second-Order System
 
