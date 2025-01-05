@@ -233,72 +233,72 @@ The system type N is determined by the number of free integrators in the open-lo
 !!! example "Practice Example 1: First-Order System"
     Consider a first-order system $G(s) = \frac{1}{s + 1}$ (Type 0):
 
-    [**Step Input Analysis**]{.icon-function}
+    **Step Input Analysis** :material-function:
     
     1. Calculate Position Error Constant:
-       <div class="center" markdown>
-       
-       $K_p = G(0) = 1$
-       
-       </div>
+        <div class="center" markdown>
+        
+        $K_p = G(0) = 1$
+        
+        </div>
     
     2. Calculate Steady-State Error:
-       <div class="center" markdown>
-       
-       $e_{ss} = \frac{1}{1 + K_p} = \frac{1}{1 + 1} = 0$
-       
-       </div>
+        <div class="center" markdown>
+        
+        $e_{ss} = \frac{1}{1 + K_p} = \frac{1}{1 + 1} = 0$
+        
+        </div>
 
-    [**Ramp Input Analysis**]{.icon-chart-line}
+    **Ramp Input Analysis** :material-chart-line:
     
     1. Calculate Velocity Error Constant:
-       <div class="center" markdown>
-       
-       $K_v = \lim\limits_{s \to 0} sG(s) = 0$
-       
-       </div>
+        <div class="center" markdown>
+        
+        $K_v = \lim\limits_{s \to 0} sG(s) = 0$
+        
+        </div>
     
     2. Calculate Steady-State Error:
-       <div class="center" markdown>
-       
-       $e_{ss} = \frac{1}{K_v} = \infty$ (constant error rate)
-       
-       </div>
+        <div class="center" markdown>
+        
+        $e_{ss} = \frac{1}{K_v} = \infty$ (constant error rate)
+        
+        </div>
 
 !!! example "Practice Example 2: Type 1 System"
     Consider a Type 1 system $G(s) = \frac{K}{s(s + 1)}$:
 
-    [**Step Input Analysis**]{.icon-function}
+    **Step Input Analysis** :material-function:
     
     1. Calculate Position Error Constant:
-       <div class="center" markdown>
-       
-       $K_p = \lim\limits_{s \to 0} G(s) = \infty$
-       
-       </div>
+        <div class="center" markdown>
+        
+        $K_p = \lim\limits_{s \to 0} G(s) = \infty$
+        
+        </div>
     
     2. Calculate Steady-State Error:
-       <div class="center" markdown>
-       
-       $e_{ss} = \frac{1}{1 + K_p} = 0$
-       
-       </div>
+        <div class="center" markdown>
+        
+        $e_{ss} = \frac{1}{1 + K_p} = 0$
+        
+        </div>
 
-    [**Ramp Input Analysis**]{.icon-chart-line}
+    **Ramp Input Analysis** :material-chart-line:
     
     1. Calculate Velocity Error Constant:
-       <div class="center" markdown>
-       
-       $K_v = \lim\limits_{s \to 0} sG(s) = K$
-       
-       </div>
+        <div class="center" markdown>
+        
+        $K_v = \lim\limits_{s \to 0} sG(s) = K$
+        
+        </div>
     
     2. Calculate Steady-State Error:
-       <div class="center" markdown>
-       
-       $e_{ss} = \frac{1}{K_v} = \frac{1}{K}$
-       
-       </div>
+        <div class="center" markdown>
+        
+        $e_{ss} = \frac{1}{K_v} = \frac{1}{K}$
+        
+        </div>
 
 ### Summary of Second-Order System Performance Characteristics
 
@@ -348,7 +348,7 @@ def find_nearest(array, value):
     return idx
 
 # Create figure with a specific background color
-plt.figure(figsize=(8, 5))  # Even smaller figure size
+plt.figure(figsize=(14, 8))  # Restored to original larger size
 ax = plt.gca()
 ax.set_facecolor('#ffffff')
 plt.gcf().set_facecolor('#ffffff')
@@ -461,7 +461,7 @@ plt.legend(loc='upper right', fontsize=11, fancybox=True,
 
 # Adjust layout and save with high DPI
 plt.tight_layout()
-plt.savefig('docs/images/examples/second_order_response.png', dpi=150, bbox_inches='tight', 
+plt.savefig('docs/images/examples/second_order_response.png', dpi=300, bbox_inches='tight',  # Restored to original DPI
             facecolor='white', edgecolor='none')
 
 # Show plot

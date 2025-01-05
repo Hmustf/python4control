@@ -159,107 +159,9 @@
     .md-typeset h4 { font-size: 1em; }
 } 
 
-/* Control icon sizes */
-.md-typeset :is(.emojione, .twemoji, .gemoji),
-.md-typeset span[class*="fa-"],
-.md-typeset .fontawesome-solid-function,
-.md-typeset .fontawesome-solid-chart-line {
-    font-size: 0.9rem !important;
-    vertical-align: middle;
-    position: relative;
-    top: -0.1em;
-}
-
-/* Ensure icons in admonitions are properly sized */
-.md-typeset .admonition-title :is(.emojione, .twemoji, .gemoji),
-.md-typeset .admonition-title span[class*="fa-"] {
-    font-size: 1rem !important;
-    vertical-align: middle;
-    margin-right: 0.5em;
-}
-
-/* Control image sizes */
-.md-typeset img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Specific control for large plots */
-.md-typeset img[alt="Second-Order Response"],
-.md-typeset img[alt="Second-Order System Performance Matrix"] {
-    max-width: 80%;
-    display: block;
-    margin: 1em auto;
-}
-
-/* Ensure images are centered */
-.md-typeset p > img {
-    display: block;
-    margin: 1em auto;
-}
-
-/* Responsive image adjustments */
-@media screen and (max-width: 768px) {
-    .md-typeset img[alt="Second-Order Response"],
-    .md-typeset img[alt="Second-Order System Performance Matrix"] {
-        max-width: 100%;
-    }
-} 
-
-/* Control icon sizes */
-.material-function,
-.material-chart-line {
-    font-family: 'Material Icons';
-    font-size: 16px !important;
-    line-height: 1;
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
-    top: -0.1em;
-}
-
-.material-function::before {
-    content: 'functions';
-}
-
-.material-chart-line::before {
-    content: 'show_chart';
-}
-
-/* Remove all previous icon-related CSS and replace with this simple implementation */
-.icon-function strong,
-.icon-chart-line strong {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5em;
-}
-
-.icon-function strong::after,
-.icon-chart-line strong::after {
-    font-family: 'Material Icons';
-    font-size: 1em;
-    font-weight: normal;
-    font-style: normal;
-    display: inline-block;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    direction: ltr;
-}
-
-.icon-function strong::after {
-    content: "functions";
-}
-
-.icon-chart-line strong::after {
-    content: "show_chart";
-}
-
 /* Responsive image controls */
 .responsive-image {
-    max-width: 90%;
+    max-width: 100%;
     height: auto;
     display: block;
     margin: 2em auto;
@@ -267,15 +169,18 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* Specific control for large plots */
+.md-typeset img[alt="Second-Order Response"],
+.md-typeset img[alt="Second-Order System Performance Matrix"] {
+    max-width: 100%;
+    display: block;
+    margin: 2em auto;
+}
+
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
     .responsive-image {
         max-width: 100%;
         margin: 1em auto;
-    }
-    
-    .icon-function::after,
-    .icon-chart-line::after {
-        font-size: 1em;
     }
 } 
