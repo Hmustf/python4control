@@ -205,3 +205,23 @@
         max-width: 100%;
     }
 } 
+
+/* Control icon sizes */
+.material-function,
+.material-chart-line {
+    font-family: 'Material Icons';
+    font-size: 16px !important;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -0.1em;
+}
+
+.material-function::before {
+    content: 'functions';
+}
+
+.material-chart-line::before {
+    content: 'show_chart';
+} 
