@@ -147,25 +147,76 @@ $$t_p = \frac{\pi}{\omega_n\sqrt{1-\zeta^2}}$$
 ### Steady-State Error
 The difference between the desired output and the actual output as time approaches infinity.
 
-For a step input:
+#### Definition and Basic Formulas
+
+For any input $r(t)$ and output $y(t)$, the steady-state error is defined as:
+
 $$e_{ss} = \lim_{t \to \infty} [r(t) - y(t)] = \lim_{s \to 0} [sR(s) - sY(s)]$$
 
-For a system with unity feedback:
+For a unity feedback system with forward transfer function $G(s)$:
+
 $$e_{ss} = \lim_{s \to 0} \frac{R(s)}{1 + G(s)}$$
 
-For different input types:
-- Step input: $e_{ss} = \frac{1}{1 + K_p}$
-- Ramp input: $e_{ss} = \frac{1}{K_v}$
-- Parabolic input: $e_{ss} = \frac{1}{K_a}$
+#### System Type and Error Constants
 
-where:
-- $K_p$ is the position error constant
-- $K_v$ is the velocity error constant
-- $K_a$ is the acceleration error constant
+The system type N is determined by the number of free integrators in the open-loop transfer function $G(s)$.
+
+| System Type | $G(s)$ Form | Example |
+|------------|-------------|----------|
+| Type 0 | $\frac{K}{(s + p_1)(s + p_2)...}$ | $\frac{K}{s + 1}$ |
+| Type 1 | $\frac{K}{s(s + p_1)(s + p_2)...}$ | $\frac{K}{s(s + 1)}$ |
+| Type 2 | $\frac{K}{s^2(s + p_1)(s + p_2)...}$ | $\frac{K}{s^2(s + 1)}$ |
+
+#### Error Constants and Their Relationships
+
+| Error Constant | Formula | Description |
+|---------------|---------|-------------|
+| Position ($K_p$) | $\lim_{s \to 0} G(s)$ | For step input |
+| Velocity ($K_v$) | $\lim_{s \to 0} sG(s)$ | For ramp input |
+| Acceleration ($K_a$) | $\lim_{s \to 0} s^2G(s)$ | For parabolic input |
+
+#### Steady-State Error for Different Input Types
+
+| Input Type | Input Function | Error Formula | Type 0 | Type 1 | Type 2 |
+|------------|---------------|---------------|---------|---------|---------|
+| Step | $\frac{1}{s}$ | $\frac{1}{1 + K_p}$ | Finite | Zero | Zero |
+| Ramp | $\frac{1}{s^2}$ | $\frac{1}{K_v}$ | Infinite | Finite | Zero |
+| Parabolic | $\frac{1}{s^3}$ | $\frac{1}{K_a}$ | Infinite | Infinite | Finite |
+
+#### Example Calculations
+
+For our first-order system $G(s) = \frac{1}{s + 1}$ (Type 0):
+
+1. Step Input:
+   - $K_p = G(0) = 1$
+   - $e_{ss} = \frac{1}{1 + K_p} = \frac{1}{1 + 1} = 0$
+
+2. Ramp Input:
+   - $K_v = \lim_{s \to 0} sG(s) = 0$
+   - $e_{ss} = \frac{1}{K_v} = \infty$ (constant error rate)
+
+For a Type 1 system $G(s) = \frac{K}{s(s + 1)}$:
+
+1. Step Input:
+   - $K_p = \infty$
+   - $e_{ss} = 0$
+
+2. Ramp Input:
+   - $K_v = K$
+   - $e_{ss} = \frac{1}{K}$
+
+#### Improving Steady-State Error
+
+To improve steady-state error, you can:
+
+1. Increase the system type (add integrators)
+2. Increase the gain $K$
+3. Add compensation networks
+4. Use integral control in a PID controller
 
 Results in our examples:
 - Step response: $e_{ss} = 0$ (Final value = 1.00)
-- Ramp response: Constant error rate of 1.00
+- Ramp response: Constant error rate of 1.00 (Type 0 system)
 
 ## Example: Analyzing Second-Order System
 
