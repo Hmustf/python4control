@@ -181,7 +181,7 @@ t = 4.0, y = 0.0183
 t = 5.0, y = 0.0067
 ```
 
-![Differential Equation Solution](../images/examples/differential_equation.png){: .responsive-image }
+![Differential Equation Solution](../images/examples/differential_equation.png){: .responsive-image}
 
 ### Advanced Plotting Techniques
 
@@ -259,7 +259,7 @@ t = 3.1416:
   damped sin(t) = -0.0011
 ```
 
-![Multiple Plots Example](../images/examples/multiple_plots.png){: .responsive-image }
+![Multiple Plots Example](../images/examples/multiple_plots.png){: .responsive-image}
 
 #### Scatter Plots with Color Mapping
 
@@ -303,7 +303,7 @@ Average distance from origin: 1.2327
 Maximum distance from origin: 4.2314
 ```
 
-![Scatter Plot Example](../images/examples/scatter_plot.png){: .responsive-image }
+![Scatter Plot Example](../images/examples/scatter_plot.png){: .responsive-image}
 
 ### Control Systems with Python Control
 
@@ -343,7 +343,7 @@ Transfer function G(s):
 s^2 + 2 s + 1
 ```
 
-![Step Response](../images/examples/step_response.png){: .responsive-image }
+![Step Response](../images/examples/step_response.png){: .responsive-image}
 
 #### Multiple Step Responses
 We can also compare step responses of different systems:
@@ -403,7 +403,7 @@ Transfer function for a=5:
 s + 5
 ```
 
-![Multiple Step Responses](../images/examples/multiple_step_responses.png){: .responsive-image }
+![Multiple Step Responses](../images/examples/multiple_step_responses.png){: .responsive-image}
 
 This example shows how to:
 1. Create transfer functions with different parameters
