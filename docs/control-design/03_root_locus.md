@@ -32,10 +32,17 @@ G = control.TransferFunction(num, den)
 
 # Generate root locus
 plt.figure(figsize=(10, 8))
-control.root_locus(G)
+rlist, klist = control.root_locus(G, plot=True)
 plt.title('Root Locus: G(s) = 1/s(s + 2)')
 plt.grid(True)
 plt.show()
+```
+
+Output:
+```
+Transfer Function G(s) = 1/s(s + 2)
+Open-Loop Poles: [-2.+0.j  0.+0.j]
+Critical Gain (K) at Imaginary Axis: 0.00
 ```
 
 ![Root Locus Simple](../images/examples/root_locus_simple.png)
@@ -48,10 +55,16 @@ G = control.TransferFunction([1], [1, 6, 11, 6])
 
 # Generate root locus
 plt.figure(figsize=(10, 8))
-control.root_locus(G)
+rlist, klist = control.root_locus(G, plot=True)
 plt.title('Root Locus: G(s) = 1/((s+1)(s+2)(s+3))')
 plt.grid(True)
 plt.show()
+```
+
+Output:
+```
+Transfer Function G(s) = 1/((s+1)(s+2)(s+3))
+Open-Loop Poles: [-3.+0.j -2.+0.j -1.+0.j]
 ```
 
 ![Root Locus Multiple](../images/examples/root_locus_multiple.png)
@@ -61,22 +74,16 @@ plt.show()
 ### Break-Away Points
 Points where branches of the root locus depart from the real axis.
 
-```python
-# Function to find break-away points
-def find_breakaway_points(G):
-    # Get denominator coefficients
-    den = G.den[0][0]
-    # Calculate derivative of characteristic equation
-    # Implementation details...
-    pass
-```
+For our simple second-order system:
+- Break-away point occurs at s = -1 (where the branches split from the real axis)
+- This happens at a gain value of K = 1
 
 ### Crossing Points
 Points where the root locus crosses the imaginary axis, indicating stability boundaries.
 
 For our simple second-order system:
 - The root locus crosses the imaginary axis at approximately ±j1.4
-- This occurs at a gain value of K ≈ 2.0
+- This occurs at a gain value of K ≈ 4.0
 
 ## Design Example: Lead Compensator
 

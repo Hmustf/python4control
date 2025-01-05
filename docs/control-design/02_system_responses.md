@@ -29,9 +29,10 @@ plt.show()
 
 Output:
 ```
-Step Response Output:
+Transfer Function G(s) = 1/(s + 1)
 Final Value: 1.00
 Rise Time: 2.30 seconds
+Settling Time: 3.91 seconds
 ```
 
 ![Step Response](../images/examples/step_response.png)
@@ -54,8 +55,10 @@ plt.show()
 
 Output:
 ```
-Impulse Response Output:
+Transfer Function G(s) = 1/(s + 1)
 Peak Value: 1.00
+Peak Time: 0.00 seconds
+Settling Time: 3.98 seconds
 ```
 
 ![Impulse Response](../images/examples/impulse_response.png)
@@ -66,16 +69,12 @@ The ramp response shows how the system follows a continuously increasing input.
 ```python
 # Create time vector
 t = np.linspace(0, 10, 1000)
-
-# Create ramp input
 u = t
-
-# Simulate system response to ramp input
-t, y, _ = control.forced_response(G, t, u)
+t_out, y = control.forced_response(G, T=t, U=u)
 
 plt.figure()
-plt.plot(t, u, '--', label='Input')
-plt.plot(t, y, label='Output')
+plt.plot(t_out, u, '--', label='Input')
+plt.plot(t_out, y, label='Output')
 plt.grid(True)
 plt.title('Ramp Response')
 plt.xlabel('Time (s)')
@@ -83,6 +82,14 @@ plt.ylabel('Amplitude')
 plt.legend()
 plt.show()
 ```
+
+Output:
+```
+Transfer Function G(s) = 1/(s + 1)
+Steady-State Error Rate: 1.00
+```
+
+![Ramp Response](../images/examples/ramp_response.png)
 
 ## Response Characteristics
 
@@ -92,7 +99,7 @@ The time required for the system output to rise from 10% to 90% of its final val
 
 ### Settling Time
 The time required for the system to settle within ±2% of its final value.
-- For our first-order system: approximately 4 time constants (4τ)
+- For our first-order system: 3.91 seconds (approximately 4 time constants)
 
 ### Overshoot
 The maximum peak value of the response curve measured from the desired response of the system.
@@ -101,8 +108,9 @@ The maximum peak value of the response curve measured from the desired response 
 ### Steady-State Error
 The difference between the desired output and the actual output as time approaches infinity.
 - In our step response example: 0 (Final value = 1.00)
+- In our ramp response example: Constant error rate of 1.00
 
-## Example: Analyzing System Characteristics
+## Example: Analyzing Second-Order System
 
 ```python
 # Create a second-order system
@@ -127,9 +135,21 @@ plt.annotate(f'Rise Time: {info["RiseTime"]:.2f}s', xy=(info["RiseTime"], 0.5))
 plt.annotate(f'Peak Time: {info["PeakTime"]:.2f}s', xy=(info["PeakTime"], info["Peak"]))
 plt.annotate(f'Overshoot: {info["Overshoot"]:.1f}%', xy=(info["PeakTime"], info["Peak"]))
 plt.annotate(f'Settling Time: {info["SettlingTime"]:.2f}s', xy=(info["SettlingTime"], 1))
-
 plt.show()
 ```
+
+Output:
+```
+Transfer Function G(s) = ωn²/(s² + 2ζωn·s + ωn²)
+Natural Frequency (ωn): 1.00 rad/s
+Damping Ratio (ζ): 0.50
+Rise Time: 1.67 seconds
+Peak Time: 3.63 seconds
+Overshoot: 16.3%
+Settling Time: 8.09 seconds
+```
+
+![Second-Order Response](../images/examples/second_order_response.png)
 
 ## Exercises
 

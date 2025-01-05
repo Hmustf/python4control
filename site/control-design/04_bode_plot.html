@@ -790,6 +790,7 @@
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Bode Plot: First-Order System&#39;</span><span class="p">)</span>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
+<p><img alt="Bode First Order" src="../images/examples/bode_first_order.png" /></p>
 <h3 id="second-order-systems">Second-Order Systems</h3>
 <p>For a second-order system G(s) = ωn²/(s² + 2ζωn·s + ωn²):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Create second-order system</span>
@@ -805,6 +806,7 @@
 <a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Bode Plot: Second-Order System&#39;</span><span class="p">)</span>
 <a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
+<p><img alt="Bode Second Order" src="../images/examples/bode_second_order.png" /></p>
 <h2 id="frequency-response-analysis">Frequency Response Analysis</h2>
 <h3 id="bandwidth">Bandwidth</h3>
 <p>The frequency at which the magnitude drops by -3dB:</p>
@@ -817,6 +819,8 @@
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">bandwidth_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">mag</span> <span class="o">&lt;=</span> <span class="o">-</span><span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="k">return</span> <span class="n">w</span><span class="p">[</span><span class="n">bandwidth_idx</span><span class="p">]</span>
 </code></pre></div>
+<p>For our second-order system:
+- Bandwidth ≈ 10 rad/s (at the natural frequency)</p>
 <h3 id="resonance-peak">Resonance Peak</h3>
 <p>The maximum magnitude in the frequency response:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Function to find resonance peak</span>
@@ -826,6 +830,9 @@
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">mag</span><span class="p">),</span> <span class="n">w</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">mag</span><span class="p">)]</span>
 </code></pre></div>
+<p>For our second-order system with ζ = 0.5:
+- Resonance Peak ≈ 2 dB
+- Resonance Frequency ≈ 8.66 rad/s</p>
 <h2 id="example-band-pass-filter">Example: Band-Pass Filter</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Define band-pass filter parameters</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">f0</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># Center frequency (Hz)</span>
@@ -843,6 +850,7 @@
 <a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Bode Plot: Band-Pass Filter&#39;</span><span class="p">)</span>
 <a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
+<p><img alt="Bode Bandpass" src="../images/examples/bode_bandpass.png" /></p>
 <h2 id="stability-analysis">Stability Analysis</h2>
 <h3 id="phase-and-gain-margins">Phase and Gain Margins</h3>
 <p>Important stability metrics from Bode plots:</p>
@@ -850,29 +858,29 @@
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">gm</span><span class="p">,</span> <span class="n">pm</span><span class="p">,</span> <span class="n">wg</span><span class="p">,</span> <span class="n">wp</span> <span class="o">=</span> <span class="n">control</span><span class="o">.</span><span class="n">margin</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gain Margin: </span><span class="si">{</span><span class="n">gm</span><span class="si">}</span><span class="s2"> dB at </span><span class="si">{</span><span class="n">wg</span><span class="si">}</span><span class="s2"> rad/s&quot;</span><span class="p">)</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Phase Margin: </span><span class="si">{</span><span class="n">pm</span><span class="si">}</span><span class="s2"> degrees at </span><span class="si">{</span><span class="n">wp</span><span class="si">}</span><span class="s2"> rad/s&quot;</span><span class="p">)</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1"># Plot with margins</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">control</span><span class="o">.</span><span class="n">bode_plot</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">dB</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">margins</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
+<p>Output:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Stability Margins for Band-Pass Filter:
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Gain Margin: inf dB at nan rad/s
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Phase Margin: 180.00 degrees at 628.32 rad/s
+</code></pre></div></p>
 <h2 id="compensator-design">Compensator Design</h2>
 <h3 id="lead-compensator">Lead Compensator</h3>
 <p>Improves phase margin and bandwidth:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Design lead compensator</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">alpha</span> <span class="o">=</span> <span class="mi">10</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">T</span> <span class="o">=</span> <span class="mi">1</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">C</span> <span class="o">=</span> <span class="n">control</span><span class="o">.</span><span class="n">TransferFunction</span><span class="p">([</span><span class="n">T</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">T</span><span class="o">/</span><span class="n">alpha</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1"># Combined system</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="n">GC</span> <span class="o">=</span> <span class="n">control</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1"># Compare original and compensated systems</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="n">control</span><span class="o">.</span><span class="n">bode_plot</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original&#39;</span><span class="p">)</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="n">control</span><span class="o">.</span><span class="n">bode_plot</span><span class="p">(</span><span class="n">GC</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Compensated&#39;</span><span class="p">)</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Design lead compensator</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">alpha</span> <span class="o">=</span> <span class="mi">10</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">T</span> <span class="o">=</span> <span class="mi">1</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">C</span> <span class="o">=</span> <span class="n">control</span><span class="o">.</span><span class="n">TransferFunction</span><span class="p">([</span><span class="n">T</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">T</span><span class="o">/</span><span class="n">alpha</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1"># Combined system</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">GC</span> <span class="o">=</span> <span class="n">control</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="c1"># Compare original and compensated systems</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="n">control</span><span class="o">.</span><span class="n">bode_plot</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original&#39;</span><span class="p">)</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="n">control</span><span class="o">.</span><span class="n">bode_plot</span><span class="p">(</span><span class="n">GC</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Compensated&#39;</span><span class="p">)</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
 <h2 id="exercises">Exercises</h2>
 <ol>

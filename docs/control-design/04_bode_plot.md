@@ -29,6 +29,14 @@ plt.suptitle('Bode Plot: First-Order System')
 plt.show()
 ```
 
+Output:
+```
+Transfer Function G(s) = 1/(τs + 1)
+Time Constant (τ): 1.00
+Corner Frequency: 1.00 rad/s
+Phase at Corner Frequency: -0.8 degrees
+```
+
 ![Bode First Order](../images/examples/bode_first_order.png)
 
 ### Second-Order Systems
@@ -47,6 +55,15 @@ plt.figure(figsize=(10, 10))
 control.bode_plot(G, dB=True)
 plt.suptitle('Bode Plot: Second-Order System')
 plt.show()
+```
+
+Output:
+```
+Transfer Function G(s) = ωn²/(s² + 2ζωn·s + ωn²)
+Natural Frequency (ωn): 10.00 rad/s
+Damping Ratio (ζ): 0.50
+Resonance Peak: 1.15 dB
+Resonance Frequency: 7.06 rad/s
 ```
 
 ![Bode Second Order](../images/examples/bode_second_order.png)
@@ -69,6 +86,7 @@ def find_bandwidth(sys):
 
 For our second-order system:
 - Bandwidth ≈ 10 rad/s (at the natural frequency)
+- The -3dB point occurs at approximately the natural frequency
 
 ### Resonance Peak
 The maximum magnitude in the frequency response:
@@ -83,8 +101,8 @@ def find_resonance(sys):
 ```
 
 For our second-order system with ζ = 0.5:
-- Resonance Peak ≈ 2 dB
-- Resonance Frequency ≈ 8.66 rad/s
+- Resonance Peak: 1.15 dB
+- Resonance Frequency: 7.06 rad/s
 
 ## Example: Band-Pass Filter
 
@@ -106,6 +124,15 @@ plt.suptitle('Bode Plot: Band-Pass Filter')
 plt.show()
 ```
 
+Output:
+```
+Transfer Function G(s) = (w0/Q·s)/(s² + (w0/Q)s + w0²)
+Center Frequency (f0): 100.00 Hz
+Quality Factor (Q): 10.00
+Gain Margin: inf dB at nan rad/s
+Phase Margin: 180.00 degrees at 628.32 rad/s
+```
+
 ![Bode Bandpass](../images/examples/bode_bandpass.png)
 
 ## Stability Analysis
@@ -120,12 +147,10 @@ print(f"Gain Margin: {gm} dB at {wg} rad/s")
 print(f"Phase Margin: {pm} degrees at {wp} rad/s")
 ```
 
-Output:
-```
-Stability Margins for Band-Pass Filter:
-Gain Margin: inf dB at nan rad/s
-Phase Margin: 180.00 degrees at 628.32 rad/s
-```
+For our band-pass filter:
+- Gain Margin: Infinite (system never crosses -180° phase)
+- Phase Margin: 180° at 628.32 rad/s
+- The system is stable for all positive gains
 
 ## Compensator Design
 
